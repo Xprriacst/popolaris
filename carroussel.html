@@ -40,6 +40,18 @@
             background-color: #007bff;
             transition: width 0.6s ease;
         }
+        /* Custom arrows for carousel */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #007bff;
+            border-radius: 50%;
+            padding: 10px;
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+            top: 50%;
+            transform: translateY(-50%);
+        }
     </style>
 </head>
 <body>
@@ -86,7 +98,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Carousel Controls -->
+            <!-- Custom arrows for navigation -->
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
