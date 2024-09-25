@@ -3,132 +3,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrousel Responsif avec Navigation</title>
+    <title>Landing Page with Carousel</title>
+    <!-- Lien vers Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Lien vers Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Lien vers Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Lien vers AOS (Animations) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <style>
-        .carousel-container {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            overflow: hidden;
+        /* Styles personnalisés */
+        body {
+            font-family: 'Poppins', sans-serif;
         }
-
-        .carousel {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .carousel-item {
+        .hero {
+            height: 100vh;
             display: flex;
             align-items: center;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            padding: 15px;
-            min-width: 100%;
-            box-sizing: border-box;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
         }
-
-        .carousel-item img {
-            width: 150px;
-            height: auto;
-            border-radius: 10px;
-            margin-right: 20px;
+        .hero .content {
+            flex: 1;
         }
-
-        .carousel-item .content {
-            display: flex;
-            flex-direction: column;
+        .hero .image {
+            flex: 1;
         }
-
-        .carousel-item .content h3 {
-            margin: 0;
-            font-size: 1.5rem;
-        }
-
-        .carousel-item .content p {
-            margin: 5px 0 0;
-            color: #555;
-        }
-
-        /* Flèches de navigation */
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
+        .cta-button {
+            background-color: #007bff;
             color: white;
-            padding: 10px;
+            padding: 10px 20px;
             border: none;
-            cursor: pointer;
+            border-radius: 5px;
+        }
+        .info-section {
+            padding: 50px 0;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+        }
+        .testimonial {
+            background-color: #f2f2f2;
+            padding: 50px 0;
+        }
+        .integration-section img {
+            width: 100px;
+            margin: 10px;
+        }
+        /* Styles personnalisés pour le carrousel */
+        .carousel-content {
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        .carousel-content img {
+            border-radius: 10px;
+            width: 100%;
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 40px;
+            height: 40px;
+        }
+        .carousel-control-prev-icon::after,
+        .carousel-control-next-icon::after {
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            font-size: 20px;
+            color: #fff;
+        }
+        .carousel-control-prev-icon::after {
+            content: '\f104'; /* Icône de flèche gauche */
+        }
+        .carousel-control-next-icon::after {
+            content: '\f105'; /* Icône de flèche droite */
+        }
+        /* Ajustements pour les indicateurs du carrousel */
+        .carousel-indicators [data-bs-target] {
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
+            background-color: #007bff;
         }
-
-        .prev {
-            left: 10px;
-        }
-
-        .next {
-            right: 10px;
-        }
-
-        /* Responsiveness */
-        @media (max-width: 768px) {
-            .carousel-item {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .carousel-item img {
-                margin: 0 0 15px 0;
-                width: 100%;
-            }
+        .carousel-indicators .active {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
 
-    <div class="carousel-container">
-        <div class="carousel">
-            <div class="carousel-item">
-                <img src="your-image-1.png" alt="Image 1">
-                <div class="content">
-                    <h3>Instant Setup</h3>
-                    <p>Connect your API & enable your listings in minutes.</p>
+    <!-- En-tête -->
+    <header class="p-3 bg-light">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">Logo</a>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="#" class="nav-link">Accueil</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Fonctionnalités</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section Héros -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 content" data-aos="fade-right">
+                    <h1>Votre Solution d'Intégration</h1>
+                    <p>Intégrez facilement vos outils.</p>
+                    <button class="cta-button">Commencer</button>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <img src="your-image-2.png" alt="Image 2">
-                <div class="content">
-                    <h3>Enable Automations</h3>
-                    <p>Automate your guest messaging, upsells, and responses.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="your-image-3.png" alt="Image 3">
-                <div class="content">
-                    <h3>Measure ROI</h3>
-                    <p>Track revenue, guest sentiment, and response times.</p>
+                <div class="col-md-6 image" data-aos="fade-left">
+                    <img src="your-image.png" alt="Integration Illustration" class="img-fluid">
                 </div>
             </div>
         </div>
+    </section>
 
-        <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
-        <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+    <!-- Section Pourquoi Choisir -->
+    <section class="info-section text-center">
+        <div class="container">
+            <h2 data-aos="fade-right">Pourquoi Nous Choisir</h2>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up">
+                    <i class="fas fa-bolt fa-3x"></i>
+                    <h3>Rapidité</h3>
+                    <p>Des intégrations rapides qui vous font gagner du temps.</p>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-shield-alt fa-3x"></i>
+                    <h3>Sécurité</h3>
+                    <p>Vos données sont en sécurité avec nous.</p>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-thumbs-up fa-3x"></i>
+                    <h3>Fiabilité</h3>
+                    <p>Nous assurons un fonctionnement continu 24/7.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Intégrations -->
+    <section class="integration-section text-center bg-light">
+        <div class="container" data-aos="fade-left">
+            <h2>Nos Intégrations</h2>
+            <div class="d-flex justify-content-center">
+                <img src="partner1-logo.png" alt="Partner 1">
+                <img src="partner2-logo.png" alt="Partner 2">
+                <img src="partner3-logo.png" alt="Partner 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Témoignages -->
+    <section class="testimonial text-center">
+        <div class="container" data-aos="fade-up">
+            <h2>Ce que Disent Nos Utilisateurs</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <p>"Service génial, très fiable !"</p>
+                    <h5>- Utilisateur 1</h5>
+                </div>
+                <div class="col-md-4">
+                    <p>"Intégrations rapides et faciles à utiliser."</p>
+                    <h5>- Utilisateur 2</h5>
+                </div>
+                <div class="col-md-4">
+                    <p>"Leur équipe de support est incroyable."</p>
+                    <h5>- Utilisateur 3</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Appel à l'Action -->
+    <section class="text-center info-section">
+        <div class="container" data-aos="zoom-in">
+            <h2>Commencez à Intégrer Maintenant</h2>
+            <button class="cta-button">Essayer Gratuitement</button>
+        </div>
+    </section>
+
+    <!-- Section du Carrousel -->
+    <div class="container mt-5">
+        <!-- Carrousel -->
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <!-- Indicateurs -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <!-- Contenu du Carrousel -->
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="carousel-content">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <img src="your-image.png" class="img-fluid" alt="Integration Image">
+                            </div>
+                            <div class="col-md-6">
+                                <h2>01 Configuration Instantanée</h2>
+                                <p>Connectez votre API et activez vos listes. Notre système générera automatiquement une base de connaissances pour chaque liste basée sur toutes les données de votre PMS.</p>
+                                <ul>
+                                    <li>Connectez votre API</li>
+                                    <li>Génération automatique d'une base de connaissances</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="carousel-content">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <img src="your-image-2.png" class="img-fluid" alt="Automation Image">
+                            </div>
+                            <div class="col-md-6">
+                                <h2>02 Activez les Automatisations</h2>
+                                <p>Générez des revenus en pilote automatique. Messagerie IA, ventes incitatives, réponses aux avis, et plus encore, entièrement intégrés à votre système.</p>
+                                <ul>
+                                    <li>Messagerie automatisée</li>
+                                    <li>Optimisation des revenus</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="carousel-content">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <img src="your-image-3.png" class="img-fluid" alt="ROI Measurement Image">
+                            </div>
+                            <div class="col-md-6">
+                                <h2>03 Mesurez le ROI</h2>
+                                <p>Suivez les nouveaux revenus, le sentiment des clients, les temps de réponse et d'autres métriques clés pour améliorer les opérations et mesurer le succès.</p>
+                                <ul>
+                                    <li>Suivi des revenus</li>
+                                    <li>Mesure des temps de réponse</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Contrôles du Carrousel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                <span class="visually-hidden">Précédent</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                <span class="visually-hidden">Suivant</span>
+            </button>
+        </div>
     </div>
 
+    <!-- Pied de page -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>© 2024 Nom de l'Entreprise - Tous Droits Réservés</p>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <!-- Lien vers Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Lien vers AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        let currentIndex = 0;
-
-        function moveCarousel(direction) {
-            const carousel = document.querySelector('.carousel');
-            const items = document.querySelectorAll('.carousel-item');
-            const totalItems = items.length;
-
-            currentIndex = (currentIndex + direction + totalItems) % totalItems;
-            const translateX = -currentIndex * 100;
-            carousel.style.transform = `translateX(${translateX}%)`;
-        }
+        AOS.init();
     </script>
-
 </body>
 </html>
