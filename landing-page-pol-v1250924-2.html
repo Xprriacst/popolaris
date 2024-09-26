@@ -1,19 +1,12 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Landing Page with Carousel</title>
-<!-- Lien vers Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-<!-- Lien vers Font Awesome -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
-<!-- Lien vers Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet"/>
-<!-- Lien vers AOS (Animations) -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page with FAQ and Footer</title>
+    <!-- Lien vers Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <style>
         /* Styles personnalisés */
         body {
             font-family: 'Poppins', sans-serif;
@@ -23,12 +16,6 @@
             display: flex;
             align-items: center;
         }
-        .hero .content {
-            flex: 1;
-        }
-        .hero .image {
-            flex: 1;
-        }
         .cta-button {
             background-color: #007bff;
             color: white;
@@ -36,264 +23,182 @@
             border: none;
             border-radius: 5px;
         }
-        .info-section {
-            padding: 50px 0;
+
+        /* Section FAQ */
+        .faq-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
+
+        .accordion-button {
+            font-weight: bold;
+        }
+
+        /* Footer */
         .footer {
-            background-color: #f8f9fa;
-            padding: 20px 0;
-        }
-        .testimonial {
-            background-color: #f2f2f2;
-            padding: 50px 0;
-        }
-        .integration-section img {
-            width: 100px;
-            margin: 10px;
-        }
-        /* Styles personnalisés pour le carrousel */
-        .carousel-content {
-            background-color: #ffffff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 15px;
-            padding: 20px;
-            margin: 30px 0;
-        }
-        .carousel-content img {
-            border-radius: 10px;
-            width: 100%;
-        }
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            width: 40px;
-            height: 40px;
-        }
-        .carousel-control-prev-icon::after,
-        .carousel-control-next-icon::after {
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            font-size: 20px;
-            color: #fff;
-        }
-        .carousel-control-prev-icon::after {
-            content: '\f104'; /* Icône de flèche gauche */
-        }
-        .carousel-control-next-icon::after {
-            content: '\f105'; /* Icône de flèche droite */
-        }
-        /* Ajustements pour les indicateurs du carrousel */
-        .carousel-indicators [data-bs-target] {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #007bff;
-        }
-        .carousel-indicators .active {
-            background-color: #0056b3;
+            background-color: #343a40;
+            padding: 40px 0;
         }
 
-        /* Modification pour le menu en blanc et l'ombre */
-        .navbar-white {
-            background-color: #ffffff; /* Change la couleur de fond du menu */
-            transition: box-shadow 0.3s ease; /* Ajoute une transition douce pour l'ombre */
+        .footer h5 {
+            font-size: 1.25rem;
         }
 
-        .shadow {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+        .footer ul {
+            padding-left: 0;
         }
 
+        .footer ul li {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer ul li i {
+            font-size: 1.5rem;
+        }
+
+        .footer .text-center p {
+            margin-top: 20px;
+            font-size: 0.875rem;
+        }
     </style>
 </head>
 <body>
-<!-- En-tête -->
-<header class="p-3 sticky-top navbar-white" id="mainNavbar">
-<div class="container">
-<nav class="navbar navbar-expand-lg">
-<a class="navbar-brand" href="#">Logo</a>
-<ul class="navbar-nav ms-auto">
-<li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
-<li class="nav-item"><a class="nav-link" href="#">Fonctionnalités</a></li>
-<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-</ul>
-</nav>
-</div>
-</header>
-<!-- Section Héros -->
-<section class="hero">
-<div class="container">
-<div class="row align-items-center">
-<div class="col-md-6 content" data-aos="fade-right">
-<h1>Votre Solution d'Intégration</h1>
-<p>Intégrez facilement vos outils.</p>
-<button class="cta-button" style=" border-radius: 25px;">Commencer</button>
-</div>
-<div class="col-md-6 image" data-aos="fade-left">
-<img alt="Integration Illustration" class="img-fluid" src="your-image.png"/>
-</div>
-</div>
-</div>
-</section>
-<!-- Section Pourquoi Choisir -->
-<section class="info-section text-center" style=" padding-top: 70px; padding-bottom: 70px;">
-<div class="container">
-<h2 data-aos="fade-right">Pourquoi Nous Choisir</h2>
-<div class="row">
-<div class="col-md-4" data-aos="fade-up">
-<i class="fas fa-bolt fa-3x"></i>
-<h3>Rapidité</h3>
-<p>Des intégrations rapides qui vous font gagner du temps.</p>
-</div>
-<div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-<i class="fas fa-shield-alt fa-3x"></i>
-<h3>Sécurité</h3>
-<p>Vos données sont en sécurité avec nous.</p>
-</div>
-<div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-<i class="fas fa-thumbs-up fa-3x"></i>
-<h3>Fiabilité</h3>
-<p>Nous assurons un fonctionnement continu 24/7.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Section Intégrations -->
-<section class="integration-section text-center bg-light" style=" padding-top: 70px; padding-bottom: 70px;">
-<div class="container" data-aos="fade-left">
-<h2>Nos Intégrations</h2>
-<div class="d-flex justify-content-center">
-<img alt="Partner 1" src="partner1-logo.png"/>
-<img alt="Partner 2" src="partner2-logo.png"/>
-<img alt="Partner 3" src="partner3-logo.png"/>
-<img alt="Partner 4" src="partner4-logo.png"/>
-</div>
-</div>
-</section>
-<!-- Section Témoignages -->
-<section class="testimonial text-center">
-<div class="container" data-aos="fade-up">
-<h2>Ce que Disent Nos Utilisateurs</h2>
-<div class="row">
-<div class="col-md-4"><img src="user-photo.jpg" style="border-radius: 50%; width: 100px; height: 100px; margin-bottom: 20px;"/>
-<p>"Service génial, très fiable !"</p>
-<h5>- Utilisateur 1</h5>
-</div>
-<div class="col-md-4"><img src="user-photo.jpg" style="border-radius: 50%; width: 100px; height: 100px; margin-bottom: 20px;"/>
-<p>"Intégrations rapides et faciles à utiliser."</p>
-<h5>- Utilisateur 2</h5>
-</div>
-<div class="col-md-4"><img src="user-photo.jpg" style="border-radius: 50%; width: 100px; height: 100px; margin-bottom: 20px;"/>
-<p>"Leur équipe de support est incroyable."</p>
-<h5>- Utilisateur 3</h5>
-</div>
-</div>
-</div>
-</section>
-<!-- Section Appel à l'Action -->
-<section class="text-center info-section">
-<div class="container" data-aos="zoom-in">
-<h2>Commencez à Intégrer Maintenant</h2>
-<button class="cta-button">Essayer Gratuitement</button>
-</div>
-</section>
-<!-- Section du Carrousel -->
-<div class="container mt-5">
-<!-- Carrousel -->
-<div class="carousel slide" data-bs-ride="carousel" id="carouselExample">
-<!-- Indicateurs -->
-<div class="carousel-indicators">
-<button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0" data-bs-target="#carouselExample" type="button"></button>
-<button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExample" type="button"></button>
-<button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExample" type="button"></button>
-</div>
-<!-- Contenu du Carrousel -->
-<div class="carousel-inner">
-<!-- Slide 1 -->
-<div class="carousel-item active">
-<div class="carousel-content">
-<div class="row align-items-center">
-<div class="col-md-6">
-<img alt="Integration Image" class="img-fluid" src="your-image.png"/>
-</div>
-<div class="col-md-6">
-<h2>01 Configuration Instantanée</h2>
-<p>Connectez votre API et activez vos listes. Notre système générera automatiquement une base de connaissances pour chaque liste basée sur toutes les données de votre PMS.</p>
-<ul>
-<li>Connectez votre API</li>
-<li>Génération automatique d'une base de connaissances</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 2 -->
-<div class="carousel-item">
-<div class="carousel-content">
-<div class="row align-items-center">
-<div class="col-md-6">
-<img alt="Automation Image" class="img-fluid" src="your-image-2.png"/>
-</div>
-<div class="col-md-6">
-<h2>02 Activez les Automatisations</h2>
-<p>Générez des revenus en pilote automatique. Messagerie IA, ventes incitatives, réponses aux avis, et plus encore, entièrement intégrés à votre système.</p>
-<ul>
-<li>Messagerie automatisée</li>
-<li>Optimisation des revenus</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 3 -->
-<div class="carousel-item">
-<div class="carousel-content">
-<div class="row align-items-center">
-<div class="col-md-6">
-<img alt="ROI Measurement Image" class="img-fluid" src="your-image-3.png"/>
-</div>
-<div class="col-md-6">
-<h2>03 Mesurez le ROI</h2>
-<p>Suivez les nouveaux revenus, le sentiment des clients, les temps de réponse et d'autres métriques clés pour améliorer les opérations et mesurer le succès.</p>
-<ul>
-<li>Suivi des revenus</li>
-<li>Mesure des temps de réponse</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Contrôles du Carrousel -->
-<button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExample" type="button">
-<span aria-hidden="true" class="carousel-control-prev-icon bg-dark rounded-circle p-2"></span>
-<span class="visually-hidden">Précédent</span>
-</button>
-<button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExample" type="button">
-<span aria-hidden="true" class="carousel-control-next-icon bg-dark rounded-circle p-2"></span>
-<span class="visually-hidden">Suivant</span>
-</button>
-</div>
-</div>
-<!-- Pied de page -->
-<footer class="footer text-center">
-<div class="container">
-<p>© 2024 Nom de l'Entreprise - Tous Droits Réservés</p>
-</div>
-</footer>
-<!-- Scripts JavaScript -->
-<!-- Lien vers Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Lien vers AOS JS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-        AOS.init();
-        window.addEventListener('scroll', function() {
-            var navbar = document.getElementById('mainNavbar');
-            if (window.scrollY > 50) {  // Seuil de défilement pour déclencher l'ombre
-                navbar.classList.add('shadow');
-            } else {
-                navbar.classList.remove('shadow');
-            }
-        });
-</script>
+    <!-- En-tête -->
+    <header class="p-3 sticky-top navbar-white" id="mainNavbar">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">Logo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Fonctionnalités</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section Héros -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 content">
+                    <h1>Votre Solution d'Intégration</h1>
+                    <p>Intégrez facilement vos outils.</p>
+                    <button class="cta-button" style=" border-radius: 25px;">Commencer</button>
+                </div>
+                <div class="col-md-6 image">
+                    <img alt="Integration Illustration" class="img-fluid" src="your-image.png"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section FAQ -->
+    <section class="faq-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Questions Fréquemment Posées</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Question 1 : Comment fonctionne votre produit ?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Notre produit fonctionne en intégrant vos systèmes via des API pour offrir une solution de gestion tout-en-un.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Question 2 : Puis-je essayer gratuitement ?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Oui, nous offrons un essai gratuit de 30 jours avec toutes les fonctionnalités disponibles.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Question 3 : Quelles intégrations sont disponibles ?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Nous proposons des intégrations avec les principaux outils comme Salesforce, HubSpot, Google Analytics, et bien d'autres.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>À propos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Notre mission</a></li>
+                        <li><a href="#" class="text-light">Notre équipe</a></li>
+                        <li><a href="#" class="text-light">Carrières</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Liens Utiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">FAQ</a></li>
+                        <li><a href="#" class="text-light">Politique de Confidentialité</a></li>
+                        <li><a href="#" class="text-light">Conditions Générales</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Documentation</a></li>
+                        <li><a href="#" class="text-light">Centre d'aide</a></li>
+                        <li><a href="#" class="text-light">Nous Contacter</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Suivez-nous</h5>
+                    <ul class="list-unstyled d-flex">
+                        <li><a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" class="text-light me-3"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="#" class="text-light"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>© 2024 Nom de l'Entreprise - Tous Droits Réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
