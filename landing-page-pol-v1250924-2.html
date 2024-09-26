@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page Mobile et Desktop</title>
+    <title>Landing Page avec Menu Desktop et Mobile</title>
     <!-- Lien vers Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- Lien vers Font Awesome -->
@@ -13,25 +13,11 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
-
-        /* Section Titre mobile */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
         }
-
-        .hero h1 {
-            font-size: 2.5rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
         .cta-button {
             background-color: #007bff;
             color: white;
@@ -58,20 +44,11 @@
 
         .navbar-toggler-icon {
             font-size: 1.5rem;
-            color: #000;
-        }
-
-        .navbar-toggler:focus {
-            outline: none;
-        }
-
-        .navbar-nav {
-            margin-top: 20px;
         }
 
         @media (max-width: 991px) {
-            .hero img {
-                display: none;
+            .navbar-collapse {
+                text-align: center;
             }
         }
 
@@ -136,14 +113,14 @@
     </style>
 </head>
 <body>
-    <!-- En-tête pour Desktop et Mobile -->
+    <!-- En-tête pour Desktop avec le menu mobile sous forme d'icône de trois lignes -->
     <header class="p-3 sticky-top navbar-white" id="mainNavbar">
         <div class="container">
             <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="#">Logo</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
-                        <i class="fas fa-bars"></i> <!-- Icone améliorée -->
+                        <i class="fas fa-bars"></i>
                     </span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -172,9 +149,16 @@
     <!-- Section Héros -->
     <section class="hero">
         <div class="container">
-            <h1>Super App AI pour la gestion des locations</h1>
-            <p>Autopilote pour la communication, gestion des avis, et plus encore.</p>
-            <button class="cta-button">Réserver une démo</button>
+            <div class="row align-items-center">
+                <div class="col-md-6 content">
+                    <h1>Votre Solution d'Intégration</h1>
+                    <p>Intégrez facilement vos outils.</p>
+                    <button class="cta-button" style="border-radius: 25px;">Commencer</button>
+                </div>
+                <div class="col-md-6 image">
+                    <img alt="Integration Illustration" class="img-fluid" src="your-image.png"/>
+                </div>
+            </div>
         </div>
     </section>
 
