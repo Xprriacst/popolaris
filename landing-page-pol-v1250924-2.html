@@ -109,7 +109,71 @@
         </div>
     </section>
 
-    <!-- Section FAQ -->
+    <!-- Section du Carrousel -->
+    <div class="container mt-5">
+        <!-- Carrousel -->
+        <div class="carousel slide" data-bs-ride="carousel" id="carouselExample">
+            <!-- Indicateurs -->
+            <div class="carousel-indicators">
+                <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0" data-bs-target="#carouselExample" type="button"></button>
+                <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExample" type="button"></button>
+                <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExample" type="button"></button>
+            </div>
+            <!-- Contenu du Carrousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel-content">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <img alt="Integration Image" class="img-fluid" src="your-image.png"/>
+                            </div>
+                            <div class="col-md-6">
+                                <h2>01 Configuration Instantanée</h2>
+                                <p>Connectez votre API et activez vos listes. Notre système générera automatiquement une base de connaissances pour chaque liste basée sur toutes les données de votre PMS.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-content">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <img alt="Automation Image" class="img-fluid" src="your-image-2.png"/>
+                            </div>
+                            <div class="col-md-6">
+                                <h2>02 Activez les Automatisations</h2>
+                                <p>Générez des revenus en pilote automatique. Messagerie IA, ventes incitatives, réponses aux avis, et plus encore, entièrement intégrés à votre système.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-content">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <img alt="ROI Measurement Image" class="img-fluid" src="your-image-3.png"/>
+                            </div>
+                            <div class="col-md-6">
+                                <h2>03 Mesurez le ROI</h2>
+                                <p>Suivez les nouveaux revenus, le sentiment des clients, les temps de réponse et d'autres métriques clés pour améliorer les opérations et mesurer le succès.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Contrôles du Carrousel -->
+            <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExample" type="button">
+                <span aria-hidden="true" class="carousel-control-prev-icon bg-dark rounded-circle p-2"></span>
+                <span class="visually-hidden">Précédent</span>
+            </button>
+            <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExample" type="button">
+                <span aria-hidden="true" class="carousel-control-next-icon bg-dark rounded-circle p-2"></span>
+                <span class="visually-hidden">Suivant</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Section FAQ ajoutée sous le carrousel -->
     <section class="faq-section py-5">
         <div class="container">
             <h2 class="text-center mb-4">Questions Fréquemment Posées</h2>
