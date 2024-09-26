@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page with Carousel, FAQ, and Footer</title>
+    <title>Landing Page avec Menu Desktop et Mobile</title>
     <!-- Lien vers Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- Lien vers Font Awesome -->
@@ -24,6 +24,32 @@
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
+        }
+
+        /* Menu Desktop (Navbar) */
+        .navbar-white {
+            background-color: #ffffff;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .shadow {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Menu Mobile */
+        .navbar-toggler {
+            border: none;
+            outline: none;
+        }
+
+        .navbar-toggler-icon {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                text-align: center;
+            }
         }
 
         /* Section Pourquoi Choisir */
@@ -87,19 +113,18 @@
     </style>
 </head>
 <body>
-    <!-- En-tête avec le menu mobile responsive -->
+    <!-- En-tête pour Desktop avec le menu mobile sous forme d'icône de trois lignes -->
     <header class="p-3 sticky-top navbar-white" id="mainNavbar">
         <div class="container">
             <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="#">Logo</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
-                        <!-- Icon for the hamburger menu (three lines) -->
                         <i class="fas fa-bars"></i>
                     </span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto d-none d-lg-flex">
                         <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Fonctionnalités</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
@@ -109,6 +134,18 @@
         </div>
     </header>
 
+    <!-- Script pour ajouter l'ombre au défilement -->
+    <script>
+        window.addEventListener('scroll', function() {
+            var navbar = document.getElementById('mainNavbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow');
+            } else {
+                navbar.classList.remove('shadow');
+            }
+        });
+    </script>
+
     <!-- Section Héros -->
     <section class="hero">
         <div class="container">
@@ -116,7 +153,7 @@
                 <div class="col-md-6 content">
                     <h1>Votre Solution d'Intégration</h1>
                     <p>Intégrez facilement vos outils.</p>
-                    <button class="cta-button" style=" border-radius: 25px;">Commencer</button>
+                    <button class="cta-button" style="border-radius: 25px;">Commencer</button>
                 </div>
                 <div class="col-md-6 image">
                     <img alt="Integration Illustration" class="img-fluid" src="your-image.png"/>
@@ -193,7 +230,67 @@
         </div>
     </section>
 
-    <!-- Section FAQ ajoutée sous le carrousel -->
+    <!-- Section Carrousel -->
+    <div class="container mt-5">
+        <div class="carousel slide" data-bs-ride="carousel" id="carouselExample">
+            <div class="carousel-indicators">
+                <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0" data-bs-target="#carouselExample" type="button"></button>
+                <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExample" type="button"></button>
+                <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExample" type="button"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel-content">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <img alt="Integration Image" class="img-fluid" src="your-image.png"/>
+                            </div>
+                            <div class="col-md-6">
+                                <h2>01 Configuration Instantanée</h2>
+                                <p>Connectez votre API et activez vos listes. Notre système générera automatiquement une base de connaissances pour chaque liste basée sur toutes les données de votre PMS.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-content">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <img alt="Automation Image" class="img-fluid" src="your-image-2.png"/>
+                            </div>
+                            <div class="col-md-6">
+                                <h2>02 Activez les Automatisations</h2>
+                                <p>Générez des revenus en pilote automatique.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-content">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <img alt="ROI Measurement Image" class="img-fluid" src="your-image-3.png"/>
+                            </div>
+                            <div class="col-md-6">
+                                <h2>03 Mesurez le ROI</h2>
+                                <p>Suivez les nouveaux revenus et autres métriques.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExample" type="button">
+                <span aria-hidden="true" class="carousel-control-prev-icon bg-dark rounded-circle p-2"></span>
+                <span class="visually-hidden">Précédent</span>
+            </button>
+            <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExample" type="button">
+                <span aria-hidden="true" class="carousel-control-next-icon bg-dark rounded-circle p-2"></span>
+                <span class="visually-hidden">Suivant</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Section FAQ -->
     <section class="faq-section py-5">
         <div class="container">
             <h2 class="text-center mb-4">Questions Fréquemment Posées</h2>
@@ -201,36 +298,36 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Question 1 : Comment fonctionne votre produit ?
+                            Comment fonctionne votre produit ?
                         </button>
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Notre produit fonctionne en intégrant vos systèmes via des API pour offrir une solution de gestion tout-en-un.
+                            Notre produit fonctionne en intégrant vos systèmes via des API.
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Question 2 : Puis-je essayer gratuitement ?
+                            Puis-je essayer gratuitement ?
                         </button>
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Oui, nous offrons un essai gratuit de 30 jours avec toutes les fonctionnalités disponibles.
+                            Oui, nous offrons un essai gratuit de 30 jours.
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Question 3 : Quelles intégrations sont disponibles ?
+                            Quelles intégrations sont disponibles ?
                         </button>
                     </h2>
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Nous proposons des intégrations avec les principaux outils comme Salesforce, HubSpot, Google Analytics, et bien d'autres.
+                            Nous proposons des intégrations avec Salesforce, HubSpot, et d'autres outils.
                         </div>
                     </div>
                 </div>
