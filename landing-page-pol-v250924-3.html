@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Polaris</title>
+    <!-- Lien vers Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Lien vers Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+    <!-- Lien vers Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles personnalisés */
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .cta-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Aération des sections */
+        .info-section, .integration-section, .testimonial, .cta-section {
+            padding: 80px 0;
+        }
+
+        /* Moderniser les titres et sous-titres */
+        h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.125rem;
+            line-height: 1.6;
+        }
+
+        /* Styliser l'accordéon de la FAQ */
+        .accordion-button {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        .accordion-button::after {
+            font-family: 'FontAwesome';
+            content: '\f107'; /* Icone flèche vers le bas */
+            font-size: 1.25rem;
+            color: #007bff;
+        }
+
+        .accordion-button:not(.collapsed)::after {
+            content: '\f106'; /* Icone flèche vers le haut */
+        }
+
+        .accordion-item {
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: 1px solid #dee2e6;
+        }
+
+        .accordion-body {
+            font-size: 1.125rem;
+            color: #495057;
+        }
+    </style>
+</head>
+<body>
+    <header class="p-3 sticky-top navbar-white" id="mainNavbar">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">
+                    <img src="polaris3-logo.png" alt="Polaris Logo" style="width: 150px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto d-none d-lg-flex">
+                        <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Fonctionnalités</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section Héros -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 content">
+                    <h1>Votre Solution d'Intégration</h1>
+                    <p>Intégrez facilement vos outils.</p>
+                    <button class="cta-button" style="border-radius: 25px;">Commencer</button>
+                </div>
+                <div class="col-md-6 image">
+                    <img alt="Integration Illustration" class="img-fluid" src="your-image.png"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Pourquoi Nous Choisir -->
+    <section class="info-section text-center">
+        <div class="container">
+            <h2>Pourquoi Nous Choisir</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <i class="fas fa-bolt fa-3x"></i>
+                    <h3>Rapidité</h3>
+                    <p>Des intégrations rapides qui vous font gagner du temps.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-shield-alt fa-3x"></i>
+                    <h3>Sécurité</h3>
+                    <p>Vos données sont en sécurité avec nous.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-thumbs-up fa-3x"></i>
+                    <h3>Fiabilité</h3>
+                    <p>Nous assurons un fonctionnement continu 24/7.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Nos Intégrations -->
+    <section class="integration-section text-center">
+        <div class="container">
+            <h2>Nos Intégrations</h2>
+            <div class="d-flex justify-content-center">
+                <img alt="Partner 1" src="partner1-logo.png"/>
+                <img alt="Partner 2" src="partner2-logo.png"/>
+                <img alt="Partner 3" src="partner3-logo.png"/>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Témoignages -->
+    <section class="testimonial text-center">
+        <div class="container">
+            <h2>Ce que Disent Nos Utilisateurs</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="user-photo.jpg" style="border-radius: 50%; width: 100px; height: 100px; margin-bottom: 20px;"/>
+                    <p>"Service génial, très fiable !"</p>
+                    <h5>- Utilisateur 1</h5>
+                </div>
+                <div class="col-md-4">
+                    <img src="user-photo.jpg" style="border-radius: 50%; width: 100px; height: 100px; margin-bottom: 20px;"/>
+                    <p>"Intégrations rapides et faciles à utiliser."</p>
+                    <h5>- Utilisateur 2</h5>
+                </div>
+                <div class="col-md-4">
+                    <img src="user-photo.jpg" style="border-radius: 50%; width: 100px; height: 100px; margin-bottom: 20px;"/>
+                    <p>"Leur équipe de support est incroyable."</p>
+                    <h5>- Utilisateur 3</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Appel à l'Action -->
+    <section class="cta-section text-center info-section">
+        <div class="container">
+            <h2>Commencez à Intégrer Maintenant</h2>
+            <button class="cta-button">Essayer Gratuitement</button>
+        </div>
+    </section>
+
+    <!-- Section FAQ -->
+    <section class="faq-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Questions Fréquemment Posées</h2>
+            <div class="row mb-4">
+                <div class="col-md-12 text-center">
+                    <img src="image.png" alt="FAQ Image" style="width: 100px;">
+                </div>
+            </div>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Comment fonctionne votre produit ?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Notre produit fonctionne en intégrant vos systèmes via des API.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Puis-je essayer gratuitement ?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Oui, nous offrons un essai gratuit de 30 jours.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Quelles intégrations sont disponibles ?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Nous proposons des intégrations avec Salesforce, HubSpot, et d'autres outils.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>À propos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Notre mission</a></li>
+                        <li><a href="#" class="text-light">Notre équipe</a></li>
+                        <li><a href="#" class="text-light">Carrières</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Liens Utiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">FAQ</a></li>
+                        <li><a href="#" class="text-light">Politique de Confidentialité</a></li>
+                        <li><a href="#" class="text-light">Conditions Générales</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Documentation</a></li>
+                        <li><a href="#" class="text-light">Centre d'aide</a></li>
+                        <li><a href="#" class="text-light">Nous Contacter</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Suivez-nous</h5>
+                    <ul class="list-unstyled d-flex">
+                        <li><a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" class="text-light me-3"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="#" class="text-light"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>© 2024 Nom de l'Entreprise - Tous Droits Réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
