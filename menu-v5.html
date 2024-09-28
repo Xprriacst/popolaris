@@ -19,13 +19,16 @@
             font-family: 'Poppins', sans-serif;
         }
 
+        /* Section Héros */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        .hero-content {
             text-align: center;
-            flex-direction: column;
         }
 
         .cta-button {
@@ -35,6 +38,7 @@
             font-size: 1.2rem;
             border: none;
             border-radius: 25px;
+            margin-top: 20px;
         }
 
         /* Menu Desktop (Navbar) */
@@ -61,20 +65,51 @@
             font-size: 1.5rem;
         }
 
-        /* Section Héros */
-        .hero h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
+        @media (max-width: 991px) {
+            .hero {
+                flex-direction: column;
+            }
 
-        @media (min-width: 992px) {
             .hero h1 {
-                text-align: left;
-                font-size: 3.45rem;
+                font-size: 2rem;
+                margin-bottom: 20px;
+                text-align: center;
             }
 
             .cta-button {
                 margin-top: 20px;
+            }
+
+            .image {
+                display: none;
+            }
+
+            .navbar-toggler {
+                right: 10px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .hero {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .hero-content {
+                text-align: left;
+            }
+
+            .hero h1 {
+                font-size: 3.45rem;
+                margin-bottom: 20px;
+            }
+
+            .cta-button {
+                margin-top: 20px;
+            }
+
+            .image {
+                display: block;
             }
         }
 
@@ -87,25 +122,6 @@
         .footer .text-center p {
             margin-top: 20px;
             font-size: 0.875rem;
-        }
-
-        @media (max-width: 991px) {
-            .navbar-collapse {
-                text-align: center;
-            }
-
-            .navbar-brand {
-                text-align: center;
-                width: 100%;
-            }
-
-            .image {
-                display: none;
-            }
-
-            .cta-button {
-                margin-top: 20px;
-            }
         }
     </style>
 </head>
@@ -133,12 +149,19 @@
 
     <section class="hero">
         <div class="container">
-            <h1>
-                Nous aidons les<br>
-                <span id="mot-dynamique">PME</span><br>
-                à gagner du <span class="highlight-blue">temps</span> et de l'<span class="highlight-blue">argent</span> grâce à l'IA
-            </h1>
-            <button class="cta-button">Commencer</button>
+            <div class="row align-items-center">
+                <div class="col-md-6 hero-content">
+                    <h1>
+                        Nous aidons les<br>
+                        <span id="mot-dynamique">PME</span><br>
+                        à gagner du <span class="highlight-blue">temps</span> et de l'<span class="highlight-blue">argent</span> grâce à l'IA
+                    </h1>
+                    <button class="cta-button">Commencer</button>
+                </div>
+                <div class="col-md-6 image">
+                    <img alt="Integration Illustration" class="img-fluid" src="chatbotos2.png"/>
+                </div>
+            </div>
         </div>
     </section>
 
