@@ -53,26 +53,52 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Menu Mobile */
+        /* Menu Mobile - Amélioration de l'apparence des trois barres */
         .navbar-toggler {
             border: none;
             outline: none;
             position: absolute;
             right: 10px;
             top: 10px;
+            padding: 10px;
         }
 
         .navbar-toggler-icon {
-            font-size: 1.5rem;
+            width: 30px;
+            height: 3px;
+            background-color: #333;
+            display: block;
+            position: relative;
+        }
+
+        .navbar-toggler-icon::before,
+        .navbar-toggler-icon::after {
+            content: '';
+            width: 30px;
+            height: 3px;
+            background-color: #333;
+            position: absolute;
+            left: 0;
+            transition: 0.3s;
+        }
+
+        .navbar-toggler-icon::before {
+            top: -10px;
+        }
+
+        .navbar-toggler-icon::after {
+            top: 10px;
         }
 
         @media (max-width: 991px) {
             .hero {
                 flex-direction: column;
+                justify-content: flex-start;
+                padding-top: 50px;
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.2rem; /* Augmentation de 10% de la taille du texte */
                 margin-bottom: 20px;
                 text-align: center;
             }
@@ -133,9 +159,7 @@
                 <a class="navbar-brand" href="#">
                     <img src="logo polaris v3.png" alt="Polaris Logo" style="width: 150px;"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon">
-                        <i class="fas fa-bars"></i>
-                    </span>
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto d-lg-flex">
