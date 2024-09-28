@@ -161,22 +161,27 @@
         }
 
         /* Animation CSS */
-        @keyframes fadeOut {
-            0% { opacity: 1; }
-            100% { opacity: 0; }
+        @keyframes slideOutUp {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100%); opacity: 0; }
         }
 
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+        @keyframes slideInDown {
+            0% { transform: translateY(100%); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
 
-        .fade-out {
-            animation: fadeOut 0.5s forwards;
+        .slide-out-up {
+            animation: slideOutUp 0.5s forwards;
         }
 
-        .fade-in {
-            animation: fadeIn 0.5s forwards;
+        .slide-in-down {
+            animation: slideInDown 0.5s forwards;
+        }
+
+        #mot-dynamique {
+            display: inline-block;
+            overflow: hidden;
         }
     </style>
 </head>
@@ -232,30 +237,29 @@
         function changerMot() {
             const element = document.getElementById('mot-dynamique');
             
-            // Appliquer l'animation fade-out avant de changer le texte
-            element.classList.add('fade-out');
+            // Appliquer l'animation de défilement vers le haut avant de changer le texte
+            element.classList.add('slide-out-up');
             
-            // Après 500ms (le temps du fade-out), changer le mot
+            // Après 500ms (le temps du slide-out-up), changer le mot
             setTimeout(() => {
                 element.textContent = mots[index];
                 index = (index + 1) % mots.length;
                 
-                // Remplacer fade-out par fade-in pour faire réapparaître le mot
-                element.classList.remove('fade-out');
-                element.classList.add('fade-in');
+                // Remplacer slide-out-up par slide-in-down pour faire défiler le nouveau mot vers le bas
+                element.classList.remove('slide-out-up');
+                element.classList.add('slide-in-down');
                 
-            }, 500); // Temps pour la transition fade-out
+            }, 500); // Temps pour la transition slide-out-up
             
-            // Après 500ms supplémentaires, enlever la classe fade-in pour réinitialiser l'animation
+            // Après 500ms supplémentaires, enlever la classe slide-in-down pour réinitialiser l'animation
             setTimeout(() => {
-                element.classList.remove('fade-in');
-            }, 1000); // Assurez-vous que ce temps couvre la durée des deux animations (fade-out + fade-in)
+                element.classList.remove('slide-in-down');
+            }, 1000); // Temps couvrant les deux animations
         }
 
-        // Changer le mot toutes les 2 secondes pour laisser le temps aux animations
+        // Changer le mot toutes les 2 secondes
         setInterval(changerMot, 2000);
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
