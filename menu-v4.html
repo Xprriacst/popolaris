@@ -49,6 +49,27 @@
             }
         }
 
+        /* Animation de rotation */
+        @keyframes rotation {
+            0% {
+                transform: rotateX(90deg);
+                opacity: 0;
+            }
+            50% {
+                transform: rotateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: rotateX(-90deg);
+                opacity: 0;
+            }
+        }
+
+        .rotating-text {
+            display: inline-block;
+            transition: all 0.5s ease;
+        }
+
         /* Menu Desktop (Navbar) */
         .navbar-white {
             background-color: #ffffff;
@@ -171,7 +192,7 @@
                 <div class="col-md-6 content">
                     <h1>
                         Nous aidons les<br>
-                        <span id="mot-dynamique">PME</span><br>
+                        <span id="mot-dynamique" class="rotating-text">PME</span><br>
                         à gagner du <span class="highlight-blue">temps</span> et de l'<span class="highlight-blue">argent</span> grâce à l'IA
                     </h1>
                     <button class="cta-button">Commencer</button>
@@ -196,11 +217,19 @@
         const mots = ["PME", "entreprises", "startups", "organisations"];
         let index = 0;
 
-        // Fonction pour changer le texte
+        // Fonction pour changer le texte avec rotation
         function changerMot() {
             const element = document.getElementById('mot-dynamique');
-            element.textContent = mots[index];
-            index = (index + 1) % mots.length;
+            
+            // Ajouter la classe de rotation pour l'animation
+            element.classList.add('rotation-animation');
+            
+            // Changer le mot après l'animation
+            setTimeout(() => {
+                element.textContent = mots[index];
+                element.classList.remove('rotation-animation');  // Retirer l'animation après le changement
+                index = (index + 1) % mots.length;
+            }, 500);  // Correspond à la durée de l'animation CSS
         }
 
         // Démarrer le changement toutes les secondes
