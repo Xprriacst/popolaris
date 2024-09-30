@@ -12,8 +12,11 @@
     <!-- Lien vers Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
 
-    <!-- Google Fonts -->
+    <!-- Lien vers Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Lien vers Aeternity UI -->
+    <link rel="stylesheet" href="https://unpkg.com/aeternity-ui/aeternity-ui.min.css" />
 
     <style>
         body {
@@ -27,22 +30,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-image: url('https://images.unsplash.com/photo-1517430816045-df4b7de9d0f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
+            background: linear-gradient(45deg, #007bff, #00c6ff);
             background-size: cover;
-            background-position: center;
             position: relative;
-            overflow: hidden;
             text-align: center;
             color: white;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
+            padding: 0 20px;
+            overflow: hidden;
         }
 
         .hero-content {
@@ -52,12 +46,13 @@
 
         .hero h1 {
             font-size: 3.5rem;
-            animation: fadeIn 1s ease-in-out;
+            animation: fadeInUp 1.2s ease-in-out;
         }
 
         .hero p {
             font-size: 1.25rem;
             margin-bottom: 20px;
+            animation: fadeInUp 1.5s ease-in-out;
         }
 
         .cta-button {
@@ -68,16 +63,17 @@
             border: none;
             border-radius: 50px;
             transition: background-color 0.3s ease;
+            animation: fadeInUp 1.8s ease-in-out;
         }
 
         .cta-button:hover {
             background-color: #d99923;
         }
 
-        @keyframes fadeIn {
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(-20px);
+                transform: translateY(20px);
             }
 
             to {
@@ -90,11 +86,14 @@
         .services {
             padding: 100px 0;
             text-align: center;
+            background: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+            background-color: #f7f7f7;
         }
 
         .services h2 {
             margin-bottom: 40px;
             font-size: 2.5rem;
+            animation: fadeInUp 1s ease-in-out;
         }
 
         .services-grid {
@@ -102,6 +101,7 @@
             justify-content: space-around;
             flex-wrap: wrap;
             gap: 20px;
+            animation: fadeInUp 1.2s ease-in-out;
         }
 
         .service-box {
@@ -111,6 +111,8 @@
             border-radius: 15px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
+            max-width: 300px;
+            width: 100%;
         }
 
         .service-box:hover {
@@ -127,18 +129,36 @@
         .tools {
             padding: 100px 0;
             background-color: #f9f9f9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tools::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(0, 123, 255, 0.2), rgba(0, 198, 255, 0.2));
+            transform: translateX(-50%) rotate(-15deg);
+            z-index: 0;
         }
 
         .tools h2 {
             text-align: center;
             margin-bottom: 50px;
             font-size: 2.5rem;
+            position: relative;
+            z-index: 1;
         }
 
         .tools-grid {
             display: flex;
             justify-content: center;
             gap: 30px;
+            position: relative;
+            z-index: 1;
         }
 
         .tool-box {
@@ -161,10 +181,10 @@
             margin-bottom: 20px;
         }
 
-        /* Testimonials */
+        /* Testimonials Section */
         .testimonials {
             padding: 100px 0;
-            background-color: #222;
+            background: linear-gradient(135deg, #343a40, #222);
             color: white;
         }
 
@@ -172,12 +192,14 @@
             text-align: center;
             margin-bottom: 40px;
             font-size: 2.5rem;
+            animation: fadeInUp 1.2s ease-in-out;
         }
 
         .testimonial {
             text-align: center;
             max-width: 600px;
             margin: 0 auto;
+            animation: fadeInUp 1.5s ease-in-out;
         }
 
         .testimonial p {
@@ -201,10 +223,12 @@
             text-align: center;
             margin-bottom: 50px;
             font-size: 2.5rem;
+            animation: fadeInUp 1.2s ease-in-out;
         }
 
         .faq-item {
             margin-bottom: 20px;
+            animation: fadeInUp 1.4s ease-in-out;
         }
 
         /* Footer */
@@ -214,17 +238,27 @@
             color: white;
             text-align: center;
         }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .services-grid {
+                flex-direction: column;
+            }
+
+            .tools-grid {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 
 <body>
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Boostez Votre Productivité</h1>
             <p>Optimisez votre workflow avec des solutions d'automatisation IA et No-Code.</p>
-            <button class="cta-button">Essayez gratuitement pendant 30 jours</button>
+            <button class="cta-button aeternity-btn aeternity-btn-animated">Essayez gratuitement pendant 30 jours</button>
         </div>
     </section>
 
@@ -244,7 +278,8 @@
             </div>
             <div class="service-box">
                 <img src="https://img.icons8.com/doodle/100/000000/checked.png" alt="Error Reduction">
-                <h3>Réduction des Erreurs</h3>
+                <h3>Réduction
+                des Erreurs</h3>
                 <p>Minimisez les erreurs humaines et améliorez l'efficacité globale.</p>
             </div>
         </div>
