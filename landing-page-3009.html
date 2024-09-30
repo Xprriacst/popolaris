@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page avec IA et Automatisation No-Code</title>
+    <title>Optimisez Votre Productivité avec l'IA et l'Automatisation No-Code</title>
 
     <!-- Lien vers Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -12,113 +12,192 @@
     <!-- Lien vers Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
 
-    <!-- Lien vers Google Fonts pour la nouvelle police moderne (Poppins) -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            color: #333;
         }
 
-        /* Section Héros */
+        /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-image: url('your-background-image-url.jpg');
+            background-image: url('placeholder-hero.jpg');
             background-size: cover;
             background-position: center;
-        }
-
-        .hero-content {
+            position: relative;
+            overflow: hidden;
             text-align: center;
             color: white;
         }
 
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content {
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+        }
+
         .cta-button {
-            background-color: #007bff;
+            background-color: #f0b429;
             color: white;
             padding: 14px 28px;
             font-size: 1.2rem;
             border: none;
-            border-radius: 25px;
-            margin-top: 20px;
+            border-radius: 50px;
             transition: background-color 0.3s ease;
         }
 
         .cta-button:hover {
-            background-color: #0056b3;
+            background-color: #d99923;
         }
 
-        .highlight-blue {
-            color: #007bff;
-        }
-
-        /* Menu Desktop et Mobile (Navbar) */
-        .navbar-white {
-            background-color: #ffffff;
-            padding: 5px 0;
-            transition: box-shadow 0.3s ease;
-        }
-
-        .shadow {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar-toggler {
-            border: none;
-            outline: none;
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            padding: 10px;
-        }
-
-        @media (max-width: 991px) {
-            .hero {
-                flex-direction: column;
-                justify-content: flex-start;
-                padding-top: 50px;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
             }
-
-            .hero h1 {
-                font-size: 2.2rem;
-                margin-bottom: 20px;
-                text-align: center;
-            }
-
-            .cta-button {
-                margin-top: 20px;
-            }
-
-            .image {
-                display: none;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        @media (min-width: 992px) {
-            .hero {
-                flex-direction: row;
-                justify-content: space-between;
-            }
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            text-align: center;
+        }
 
-            .hero-content {
-                text-align: left;
-            }
+        .services h2 {
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
 
-            .hero h1 {
-                font-size: 3.45rem;
-                margin-bottom: 20px;
-            }
+        .services-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
-            .cta-button {
-                margin-top: 20px;
-            }
+        .service-box {
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-            .image {
-                display: block;
-            }
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Tool Section */
+        .tools {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+
+        .tools h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+        }
+
+        .tools-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .tool-box {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tool-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .tool-box img {
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background-color: #222;
+            color: white;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .testimonial {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .testimonial p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .testimonial img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 100px 0;
+        }
+
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
         }
 
         /* Footer */
@@ -126,145 +205,98 @@
             background-color: #343a40;
             padding: 40px 0;
             color: white;
-        }
-
-        .footer .text-center p {
-            margin-top: 20px;
-            font-size: 0.875rem;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <header class="p-3 sticky-top navbar-white" id="mainNavbar">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="#">
-                    <img src="logo polaris v3.png" alt="Polaris Logo" style="width: 150px;"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto d-lg-flex">
-                        <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Fonctionnalités</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
-
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 hero-content">
-                    <h1>
-                        Boostez Votre<br>Productivité avec<br><span class="highlight-blue">l'IA et l'Automatisation No-Code</span>
-                    </h1>
-                    <p class="lead">Que vous soyez une PME ou un particulier, économisez du temps et des ressources grâce à des solutions d’IA et des outils no-code performants.</p>
-                    <button class="cta-button">Essayez gratuitement pendant 30 jours</button>
-                    <p>Offre limitée : Réservez votre place parmi les 50 premiers bénéficiaires de notre essai gratuit !</p>
-                </div>
-                <div class="col-md-6 image">
-                    <img alt="Integration Illustration" class="img-fluid" src="chatbotos2.png" />
-                </div>
-            </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Boostez Votre Productivité</h1>
+            <p>Optimisez votre workflow avec des solutions d'automatisation IA et No-Code.</p>
+            <button class="cta-button">Essayez gratuitement pendant 30 jours</button>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Des Solutions Innovantes pour Automatiser Vos Tâches et Améliorer Votre Efficacité</h2>
-            <p class="text-center">
-                Grâce à des outils puissants comme Zapier, Manychat, et Voiceflow, nous créons des flux de travail automatisés qui réduisent la charge manuelle, vous permettant de vous concentrer sur ce qui compte vraiment.
-            </p>
-            <ul>
-                <li>Gain de temps : Les entreprises économisent en moyenne 25 heures par semaine grâce à l’automatisation (source : IBM et McKinsey).</li>
-                <li>Amélioration de la productivité : L'automatisation augmente la productivité jusqu'à 30%, notamment pour les processus répétitifs comme la gestion des médias sociaux et la collecte de données.</li>
-                <li>Efficacité accrue : L'automatisation améliore la précision et réduit les erreurs humaines, contribuant ainsi à une réduction des coûts de 15% (source : IBM et Salesforce).</li>
-            </ul>
+    <section class="services">
+        <h2>Des Solutions Innovantes pour Vous</h2>
+        <div class="services-grid">
+            <div class="service-box">
+                <h3>Gain de Temps</h3>
+                <p>Économisez en moyenne 25 heures par semaine grâce à nos solutions d'automatisation.</p>
+            </div>
+            <div class="service-box">
+                <h3>Augmentation de la Productivité</h3>
+                <p>L'automatisation augmente votre productivité jusqu'à 30%, en éliminant les tâches répétitives.</p>
+            </div>
+            <div class="service-box">
+                <h3>Réduction des Erreurs</h3>
+                <p>Minimisez les erreurs humaines et améliorez l'efficacité globale.</p>
+            </div>
         </div>
     </section>
 
     <!-- Outils No-Code Section -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">Nos Outils Préférés</h2>
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <h4>Zapier</h4>
-                    <p>Automatisation des processus entre différentes applications.</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Manychat</h4>
-                    <p>Automatisation des interactions clients avec des chatbots.</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Voiceflow</h4>
-                    <p>Création de voice bots sans écrire une seule ligne de code.</p>
-                </div>
+    <section class="tools">
+        <h2>Nos Outils Préférés</h2>
+        <div class="tools-grid">
+            <div class="tool-box">
+                <img src="placeholder-zapier.png" alt="Zapier">
+                <h4>Zapier</h4>
+                <p>Connectez et automatisez vos applications préférées.</p>
+            </div>
+            <div class="tool-box">
+                <img src="placeholder-manychat.png" alt="ManyChat">
+                <h4>ManyChat</h4>
+                <p>Automatisez les interactions clients avec des chatbots intelligents.</p>
+            </div>
+            <div class="tool-box">
+                <img src="placeholder-voiceflow.png" alt="VoiceFlow">
+                <h4>VoiceFlow</h4>
+                <p>Créez des assistants vocaux sans code.</p>
             </div>
         </div>
     </section>
 
-    <!-- Témoignages Section -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Nos Clients Témoignent</h2>
-            <blockquote class="blockquote text-center">
-                "Grâce à cette solution, nous avons automatisé 80 % de nos processus administratifs, réduisant nos coûts de 20 %." – Jean-Pierre, CEO d'une PME
-            </blockquote>
-            <blockquote class="blockquote text-center">
-                "J'ai créé un chatbot en moins d'une journée qui gère désormais 90 % des demandes de support." – Alice, Freelance
-            </blockquote>
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>Nos Clients Témoignent</h2>
+        <div class="testimonial">
+            <img src="placeholder-profile1.jpg" alt="Jean-Pierre">
+            <p>"Grâce à cette solution, nous avons automatisé 80 % de nos processus administratifs, réduisant nos coûts de 20 %."</p>
+            <p>- Jean-Pierre, CEO</p>
         </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">Comment ça Marche ?</h2>
-            <p class="text-center">Identification des besoins, création de flux de travail, déploiement et optimisation pour garantir une efficacité maximale.</p>
-            <img src="process-infographic.png" class="img-fluid d-block mx-auto" alt="Infographic Processus">
-        </div>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section class="py-5">
-        <div class="container text-center">
-            <h2 class="mb-4">Prêt à Gagner du Temps et de l'Argent ?</h2>
-            <button class="cta-button">Réservez une consultation gratuite aujourd'hui</button>
-            <p class="mt-3">Découvrez comment l'IA peut transformer votre quotidien.</p>
+        <div class="testimonial">
+            <img src="placeholder-profile2.jpg" alt="Alice">
+            <p>"J'ai créé un chatbot en moins d'une journée qui gère désormais 90 % des demandes de support."</p>
+            <p>- Alice, Freelance</p>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">Foire aux Questions (FAQ)</h2>
-            <div>
-                <h5>Comment fonctionne l'automatisation ?</h5>
-                <p>Nous utilisons des outils no-code qui se connectent à vos applications préférées pour automatiser des tâches répétitives sans nécessiter de développement complexe.</p>
-
-                <h5>Combien de temps faut-il pour voir des résultats ?</h5>
-                <p>Les premiers résultats sont visibles en quelques jours après la mise en place des automatisations.</p>
-
-                <h5>Est-ce que je peux essayer avant de m'engager ?</h5>
-                <p>Oui, nous offrons une consultation gratuite pour évaluer vos besoins et un essai de nos solutions pendant 30 jours.</p>
-            </div>
+    <section class="faq">
+        <h2>Foire aux Questions</h2>
+        <div class="faq-item">
+            <h5>Comment fonctionne l'automatisation ?</h5>
+            <p>Nous utilisons des outils no-code qui se connectent à vos applications pour automatiser des tâches répétitives sans développement complexe.</p>
+        </div>
+        <div class="faq-item">
+            <h5>Combien de temps faut-il pour voir des résultats ?</h5>
+            <p>Les premiers résultats sont visibles en quelques jours après la mise en place.</p>
+        </div>
+        <div class="faq-item">
+            <h5>Est-ce que je peux essayer avant de m'engager ?</h5>
+            <p>Oui, profitez de notre consultation gratuite et de 30 jours d'essai gratuit.</p>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer bg-dark text-light py-5">
-        <div class="container">
-            <p class="text-center">© 2024 Nom de l'Entreprise - Tous Droits Réservés</p>
-        </div>
+    <footer class="footer">
+        <p>© 2024 Nom de l'Entreprise - Tous Droits Réservés</p>
     </footer>
 
     <!-- Scripts JavaScript -->
