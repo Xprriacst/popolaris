@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page avec Automatisation et IA</title>
+    
+    <!-- Lien vers Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    
+    <!-- Lien vers Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Section Héros */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .cta-button {
+            background-color: #007bff;
+            color: white;
+            padding: 14px 28px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 25px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        .highlight-blue {
+            color: #007bff;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #343a40;
+            padding: 40px 0;
+        }
+
+        .footer .text-center p {
+            margin-top: 20px;
+            font-size: 0.875rem;
+        }
+
+        /* Autres styles */
+        .services, .tools, .testimonials, .how-it-works, .faq {
+            padding: 60px 0;
+        }
+
+        .services .fas, .tools .fas, .how-it-works .fas {
+            color: #007bff;
+        }
+
+        .tools img {
+            height: 100px;
+        }
+
+        /* Responsivité */
+        @media (max-width: 991px) {
+            .hero {
+                flex-direction: column;
+                padding-top: 50px;
+            }
+
+            .image {
+                display: none;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .hero {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .hero-content {
+                text-align: left;
+            }
+
+            .image {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="p-3 sticky-top navbar-white">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">
+                    <img src="logo polaris v3.png" alt="Polaris Logo" style="width: 150px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Fonctionnalités</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section Héros -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 hero-content">
+                    <h1>Nous aidons les<br><span id="mot-dynamique">PME</span><br>à gagner du <span class="highlight-blue">temps</span> et de l'<span class="highlight-blue">argent</span> grâce à l'IA</h1>
+                    <button class="cta-button">Commencer</button>
+                </div>
+                <div class="col-md-6 image">
+                    <img alt="Integration Illustration" class="img-fluid" src="chatbotos2.png"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Services -->
+    <section class="services">
+        <div class="container">
+            <h2 class="text-center mb-4">Des solutions simples pour automatiser vos tâches et gagner en efficacité</h2>
+            <p class="text-center mb-5">
+                Nous automatisons vos processus en utilisant des outils comme Zapier et Manychat pour que vous puissiez vous concentrer sur vos priorités.
+            </p>
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-sync fa-3x mb-3"></i>
+                    <h4>Automatisation des processus</h4>
+                    <p>Optimisez vos processus métiers en automatisant les tâches répétitives et gagnez du temps précieux.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-chart-line fa-3x mb-3"></i>
+                    <h4>Amélioration des performances</h4>
+                    <p>Augmentez votre productivité avec nos outils d'automatisation personnalisés.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-save fa-3x mb-3"></i>
+                    <h4>Économie d'argent</h4>
+                    <p>Réduisez les coûts opérationnels en automatisant vos processus internes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Outils -->
+    <section class="tools bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Nos Outils No-Code Préférés</h2>
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <img src="zapier.png" alt="Zapier" class="img-fluid mb-3">
+                    <h5>Zapier</h5>
+                    <p>Automatisez les processus entre des milliers d'applications.</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="make.png" alt="Make" class="img-fluid mb-3">
+                    <h5>Make</h5>
+                    <p>Créez des flux de travail complexes avec une interface visuelle simple.</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="manychat.png" alt="Manychat" class="img-fluid mb-3">
+                    <h5>Manychat</h5>
+                    <p>Améliorez vos interactions avec vos clients grâce aux chatbots.</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="voiceflow.png" alt="Voiceflow" class="img-fluid mb-3">
+                    <h5>Voiceflow</h5>
+                    <p>Créez des assistants vocaux sans écrire de code.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Témoignages -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="text-center mb-4">Ce Que Nos Clients Disent</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">"Grâce à cette solution, nous avons automatisé 80 % de nos processus administratifs, ce qui nous a permis de réduire nos coûts de 20 %."</p>
+                        <footer class="blockquote-footer">Jean-Pierre, CEO d'une PME de marketing digital</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-6">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">"J'ai pu créer un chatbot pour mon site web en moins d'une journée, et il gère maintenant 90 % des demandes de support."</p>
+                        <footer class="blockquote-footer">Alice, Freelance</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Comment Ça Marche -->
+    <section class="how-it-works bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Comment Ça Marche ?</h2>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <i class="fas fa-search fa-3x mb-3"></i>
+                    <h5>Identification des besoins</h5>
+                    <p>Nous analysons vos tâches répétitives et trouvons des opportunités d'automatisation.</p>
+                </div>
+                <div classHere is the complete HTML code for your landing page, ensuring responsiveness and a clean, modern layout:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page avec Automatisation et IA</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .cta-button {
+            background-color: #007bff;
+            color: white;
+            padding: 14px 28px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 25px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        .highlight-blue {
+            color: #007bff;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #343a40;
+            padding: 40px 0;
+        }
+
+        .footer .text-center p {
+            margin-top: 20px;
+            font-size: 0.875rem;
+        }
+
+        /* Section Styles */
+        .services, .tools, .testimonials, .how-it-works, .faq {
+            padding: 60px 0;
+        }
+
+        .services .fas, .tools .fas, .how-it-works .fas {
+            color: #007bff;
+        }
+
+        .tools img {
+            height: 100px;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 991px) {
+            .hero {
+                flex-direction: column;
+                padding-top: 50px;
+            }
+
+            .image {
+                display: none;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .hero {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .hero-content {
+                text-align: left;
+            }
+
+            .image {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="p-3 sticky-top navbar-white">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">
+                    <img src="logo polaris v3.png" alt="Polaris Logo" style="width: 150px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Fonctionnalités</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 hero-content">
+                    <h1>Nous aidons les<br><span id="mot-dynamique">PME</span><br>à gagner du <span class="highlight-blue">temps</span> et de l'<span class="highlight-blue">argent</span> grâce à l'IA</h1>
+                    <button class="cta-button">Commencer</button>
+                </div>
+                <div class="col-md-6 image">
+                    <img alt="Integration Illustration" class="img-fluid" src="chatbotos2.png"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="text-center mb-4">Des solutions simples pour automatiser vos tâches et gagner en efficacité</h2>
+            <p class="text-center mb-5">
+                Nous automatisons vos processus en utilisant des outils comme Zapier et Manychat pour que vous puissiez vous concentrer sur vos priorités.
+            </p>
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-sync fa-3x mb-3"></i>
+                    <h4>Automatisation des processus</h4>
+                    <p>Optimisez vos processus métiers en automatisant les tâches répétitives et gagnez du temps précieux.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-chart-line fa-3x mb-3"></i>
+                    <h4>Amélioration des performances</h4>
+                    <p>Augmentez votre productivité avec nos outils d'automatisation personnalisés.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-save fa-3x mb-3"></i>
+                    <h4>Économie d'argent</h4>
+                    <p>Réduisez les coûts opérationnels en automatisant vos processus internes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="tools bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Nos Outils No-Code Préférés</h2>
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <img src="zapier.png" alt="Zapier" class="img-fluid mb-3">
+                    <h5>Zapier</h5>
+                    <p>Automatisez les processus entre des milliers d'applications.</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="make.png" alt="Make" class="img-fluid mb-3">
+                    <h5>Make</h5>
+                    <p>Créez des flux de travail complexes avec une interface visuelle simple.</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="manychat.png" alt="Manychat" class="img-fluid mb-3">
+                    <h5>Manychat</h5>
+                    <p>Améliorez vos interactions avec vos clients grâce aux chatbots.</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="voiceflow.png" alt="Voiceflow" class="img-fluid mb-3">
+                    <h5>Voiceflow</h5>
+                    <p>Créez des assistants vocaux sans écrire de code.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="text-center mb-4">Ce Que Nos Clients Disent</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">"Grâce à cette solution, nous avons automatisé 80 % de nos processus administratifs, ce qui nous a permis de réduire nos coûts de 20 %."</p>
+                        <footer class="blockquote-footer">Jean-Pierre, CEO d'une PME de marketing digital</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-6">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">"J'ai pu créer un chatbot pour mon site web en moins d'une journée, et il gère maintenant 90 % des demandes de support."</p>
+                        <footer class="blockquote-footer">Alice, Freelance</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Comment Ça Marche ?</h2>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <i class="fas fa-search fa-3x mb-3"></i>
+                    <h5>Identification des besoins</h5>
+                    <p>Nous analysons vos tâches répétitives et trouvons des opportunités d'automatisation.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-cogs fa-3x mb-3"></i>
+                    <h5>Création des flux de travail</hHere is the full code of the landing page with all the sections integrated, ensuring responsiveness using Bootstrap:
+
