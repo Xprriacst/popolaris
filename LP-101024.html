@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Responsive et Interactive</title>
+    <!-- Lien vers Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Lien vers Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        /* Styles personnalisés */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to bottom right, #007bff, #00c6ff);
+            color: white;
+        }
+        .cta-button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* Menu Desktop (Navbar) */
+        .navbar-white {
+            background-color: #ffffff;
+            transition: box-shadow 0.3s ease;
+        }
+        .shadow {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Menu Mobile */
+        .navbar-toggler {
+            border: none;
+            outline: none;
+        }
+        .navbar-toggler-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Section Pourquoi Choisir */
+        .info-section {
+            padding: 50px 0;
+        }
+        .info-section .col-md-4 {
+            transition: transform 0.3s ease;
+        }
+        .info-section .col-md-4:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Section Nos Intégrations */
+        .integration-section {
+            padding-top: 70px;
+            padding-bottom: 70px;
+            background-color: #f8f9fa;
+        }
+        .integration-section img {
+            width: 80px;
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+        .integration-section img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Section Témoignages */
+        .testimonial {
+            background-color: #f2f2f2;
+            padding: 50px 0;
+        }
+        .testimonial img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .testimonial img:hover {
+            transform: rotate(5deg);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #343a40;
+            padding: 40px 0;
+            color: white;
+        }
+        .footer a {
+            text-decoration: none;
+            color: #b0b0b0;
+        }
+        .footer a:hover {
+            color: white;
+        }
+
+        /* Animations de scroll */
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+        .scroll-fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                text-align: center;
+            }
+            .hero {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- En-tête pour Desktop et Mobile -->
+    <header class="p-3 sticky-top navbar-white" id="mainNavbar">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">
+                <img src="polaris3-logo.png" alt="Polaris Logo" style="width: 150px;"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Fonctionnalités</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Script pour ajouter l'ombre au défilement -->
+    <script>
+        window.addEventListener('scroll', function() {
+            var navbar = document.getElementById('mainNavbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow');
+            } else {
+                navbar.classList.remove('shadow');
+            }
+        });
+    </script>
+
+    <!-- Section Héros -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 content">
+                    <h1>Nous aidons les particuliers et les petites entreprises à gagner du temps et de l'argent</h1>
+                    <p>Avec l'aide de l'intelligence artificielle, maximisez votre efficacité.</p>
+                    <button class="cta-button">Commencer</button>
+                </div>
+                <div class="col-md-6 image">
+                    <img alt="Integration Illustration" class="img-fluid" src="chatbotos2.png"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sections avec des animations de scroll -->
+    <section class="info-section text-center">
+        <div class="container">
+            <h2>Pourquoi Nous Choisir</h2>
+            <div class="row">
+                <div class="col-md-4 scroll-fade">
+                    <i class="fas fa-bolt fa-3x"></i>
+                    <h3>Rapidité</h3>
+                    <p>Des intégrations rapides qui vous font gagner du temps.</p>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <i class="fas fa-shield-alt fa-3x"></i>
+                    <h3>Sécurité</h3>
+                    <p>Vos données sont en sécurité avec nous.</p>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <i class="fas fa-thumbs-up fa-3x"></i>
+                    <h3>Fiabilité</h3>
+                    <p>Nous assurons un fonctionnement continu 24/7.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Témoignages avec animation -->
+    <section class="testimonial text-center">
+        <div class="container">
+            <h2>Ce que Disent Nos Utilisateurs</h2>
+            <div class="row">
+                <div class="col-md-4 scroll-fade">
+                    <img src="user-photo.jpg" alt="User 1"/>
+                    <p>"Service génial, très fiable !"</p>
+                    <h5>- Utilisateur 1</h5>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <img src="user-photo.jpg" alt="User 2"/>
+                    <p>"Intégrations rapides et faciles à utiliser."</p>
+                    <h5>- Utilisateur 2</h5>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <img src="user-photo.jpg" alt="User 3"/>
+                    <p>"Leur équipe de support est incroyable."</p>
+                    <h5>- Utilisateur 3</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>À propos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Notre mission</a></li>
+                        <li><a href="#">Notre équipe</a></li>
+                        <li><a href="#">Carrières</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Liens Utiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Politique de Confidentialité</a></li>
+                        <li><a href="#">Conditions Générales</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Centre d'aide</a></li>
+                        <li><a href="#">Nous Contacter</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Suivez-nous</h5>
+                    <ul class="list-unstyled d-flex">
+                        <li><a href="#" class="me-3"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#" class="me-3"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" class="me-3"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>© 2024 Nom de l'Entreprise - Tous Droits Réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Fonction pour les animations de scroll
+        const scrollElements = document.querySelectorAll('.scroll-fade');
+
+        const elementInView = (el, dividend = 1) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop <=
+                (window.innerHeight || document.documentElement.clientHeight) / dividend
+            );
+        };
+
+        const displayScrollElement = (element) => {
+            element.classList.add('show');
+        };
+
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 1.25)) {
+                    displayScrollElement(el);
+                }
+            });
+        };
+
+        window.addEventListener('scroll', () => {
+            handleScrollAnimation();
+        });
+    </script>
+</body>
+</html>
