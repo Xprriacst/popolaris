@@ -89,6 +89,67 @@
             font-size: 1.5rem;
             margin-top: 20px;
         }
+
+        /* Section Témoignages */
+        .testimonial {
+            background-color: #f2f2f2;
+            padding: 50px 0;
+        }
+        .testimonial img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .testimonial img:hover {
+            transform: rotate(5deg);
+        }
+
+        /* Section Héros */
+        .hero {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            color: #333;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: #6c757d;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #343a40;
+            padding: 40px 0;
+            color: white;
+        }
+        .footer a {
+            text-decoration: none;
+            color: #b0b0b0;
+        }
+        .footer a:hover {
+            color: white;
+        }
+
+        /* Animations de scroll */
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+        .scroll-fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -114,6 +175,23 @@
         </div>
     </header>
 
+    <!-- Section 1: Héros -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 order-md-2 content">
+                    <h1>Nous aidons les <span style="color: #E1306C;">influenceurs Instagram</span> à gagner du <span style="color: #007bff;">temps</span> et de l’<span style="color: #007bff;">argent</span> grâce à l’IA</h1>
+                    <p>Offre de lancement : en octobre, nous prenons en charge GRATUITEMENT 3 clients.</p>
+                    <button class="cta-button">Postuler maintenant</button>
+                    <p><a href="#" class="text-light">Je refuse de saisir cette opportunité unique</a></p>
+                </div>
+                <div class="col-md-6 order-md-1 image d-none d-md-block">
+                    <img alt="Integration Illustration" class="img-fluid" src="chatbotos2.png"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Section 2: Chiffres Clés -->
     <section class="info-section text-center">
         <div class="container">
@@ -129,6 +207,63 @@
                 <div class="col-md-4 scroll-fade">
                     <h3>12</h3>
                     <p>UN AUTRE CHIFFRE</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Notre offre est entièrement sécurisée -->
+    <section class="integration-section text-center">
+        <div class="container">
+            <h2>Notre offre est entièrement sécurisée</h2>
+            <div class="row mt-5">
+                <div class="col-md-4 scroll-fade">
+                    <img alt="Partner 1" src="partner1-logo.png"/>
+                    <p>Nous travaillons avec un outil partenaire officiel d’Instagram, déjà utilisé par 2M d’utilisateurs.</p>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <img alt="Partner 2" src="partner2-logo.png"/>
+                    <p>L’IA ne va jamais contacter spontanément des gens, elle se contente de répondre aux DM, et aux commentaires de tes posts, ce qui te permet de garder le contrôle.</p>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <img alt="Partner 3" src="partner3-logo.png"/>
+                    <p>Nous configurons avec toi (et en fonction de tes attentes) l’IA pour qu’elle réponde le mieux possible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Ce que tu gagnes -->
+    <section class="integration-section text-center">
+        <div class="container">
+            <h2>Ce que tu gagnes</h2>
+            <div class="row mt-5">
+                <div class="col-md-4 scroll-fade">
+                    <img alt="Gain de Temps" src="your-illust.png"/>
+                    <p>Gagne du temps : Concentre-toi sur la création pendant que nous automatisons vos interactions.</p>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <img alt="Engagement" src="your-illust-2.png"/>
+                    <p>Augmente ton engagement : Maintiens une conversation fluide avec tes abonnés même en ton absence.</p>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <img alt="Boost Ventes" src="your-illust-3.png"/>
+                    <p>Booste tes ventes grâce à nos stratégies personnalisées.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Qui nous sommes -->
+    <section class="info-section text-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img alt="Notre Équipe" class="img-fluid" src="Creative team-rafiki.png"/>
+                </div>
+                <div class="col-md-6">
+                    <h2>Qui nous sommes</h2>
+                    <p>Notre équipe d’experts en intelligence artificielle et en Marketing Digital t’accompagnera dans tout le processus.</p>
                 </div>
             </div>
         </div>
@@ -154,6 +289,84 @@
                     <img alt="Step 3" src="step3-image.png" />
                     <h5>Etape 3</h5>
                     <p>L’IA commence à répondre à tes clients !</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Offre de lancement -->
+    <section class="info-section text-center">
+        <div class="container">
+            <p>Pour notre offre de lancement, nous nous occupons entièrement GRATUITEMENT de 3 clients sur le mois d’octobre. Nous ne pourrons pas prendre en charge plus de.</p>
+            <button class="cta-button">Postuler maintenant</button>
+            <p><a href="#" class="text-light">Je refuse de saisir cette opportunité unique</a></p>
+        </div>
+    </section>
+
+    <!-- Section 8: Ils utilisent ManyChat -->
+    <section class="testimonial text-center">
+        <div class="container">
+            <h2>Ils utilisent ManyChat :</h2>
+            <div class="row">
+                <div class="col-md-4 scroll-fade">
+                    <img src="user-photo.jpg" alt="Kahlea Wade"/>
+                    <h5>Kahlea Wade, entrepreneure avec 24.4k abonnés :</h5>
+                    <p>"Manychat nous a aidés à générer plus de 70 000 $ de ventes en 3 semaines. J'ai vu une augmentation MASSIVE des conversions et de l'engagement en une semaine d'utilisation de Manychat et je n'ai pas cessé d'utiliser les mots-clés depuis !"</p>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <img src="user2-photo.jpg" alt="Jenna Kutcher"/>
+                    <h5>Jenna Kutcher, experte en marketing digital avec 1 million d'abonnés :</h5>
+                    <p>"Manychat a changé la donne pour mon entreprise et la manière dont nous nous présentons en ligne."</p>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <img src="user3-photo.jpg" alt="ABC"/>
+                    <h5>ABC, 1M de followers :</h5>
+                    <p>"C'est trop bien"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 9: FAQ -->
+    <section class="faq-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">FAQ</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Y'a-t-il un risque que je me fasse Shadowban ?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Aucun risque : nous travaillons avec la plateforme Manychat, qui est partenaire officielle d’Instagram. Plus d’information ici.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Comment puis-je configurer l'IA ?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Nous vous guidons étape par étape pour configurer l'IA selon vos besoins, et nous nous assurons qu'elle fonctionne de manière optimale pour répondre à vos clients.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Est-ce que Manychat fonctionne en dehors d'Instagram ?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Oui, Manychat est compatible avec d'autres plateformes telles que Facebook Messenger, WhatsApp et plus encore, pour une gestion centralisée de vos communications.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
