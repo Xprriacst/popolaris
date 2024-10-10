@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page Responsive avec Effets Créatifs</title>
+    <title>Landing Page pour Influenceurs Instagram</title>
     <!-- Lien vers Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- Lien vers Font Awesome -->
@@ -16,41 +16,7 @@
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
         }
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(to right, #007bff, #00d4ff);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, transparent, rgba(0, 0, 0, 0.5));
-            animation: rotateBg 10s linear infinite;
-        }
-        @keyframes rotateBg {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        .cta-button {
-            background-color: #ff5722;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 50px;
-            transition: background-color 0.3s ease;
-        }
-        .cta-button:hover {
-            background-color: #e64a19;
-        }
-        /* Menu Desktop (Navbar) */
+        /* Navbar */
         .navbar-white {
             background-color: rgba(255, 255, 255, 0.9);
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -59,35 +25,153 @@
             background-color: #ffffff;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        /* Menu Mobile */
-        .navbar-toggler {
-            border: none;
-            outline: none;
+        /* Section 1 */
+        .section-1 {
+            padding: 100px 0;
         }
-        .navbar-toggler-icon {
-            font-size: 1.5rem;
+        .section-1 .content {
+            display: flex;
+            align-items: center;
         }
-        /* Section Pourquoi Choisir */
-        .info-section {
-            padding: 50px 0;
+        .section-1 .content img {
+            width: 100%;
+            border-radius: 10px;
         }
-        /* Section Nos Intégrations */
-        .integration-section {
-            padding: 70px 0;
+        .section-1 .text-content {
+            max-width: 500px;
+        }
+        .section-1 .btn-primary {
+            background-color: #ff5722;
+            border-color: #ff5722;
+            border-radius: 50px;
+            padding: 10px 30px;
+        }
+        .section-1 .btn-link {
+            display: block;
+            margin-top: 15px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .section-1 .btn-link:hover {
+            text-decoration: underline;
+        }
+        /* Section 2 */
+        .section-2 {
+            padding: 80px 0;
             background-color: #f8f9fa;
         }
-        .integration-section img {
+        .section-2 h2 {
+            margin-bottom: 50px;
+        }
+        .section-2 .stat {
+            text-align: center;
+        }
+        .section-2 .stat h3 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #ff5722;
+        }
+        /* Section 3 */
+        .section-3 {
+            padding: 80px 0;
+        }
+        .section-3 h2 {
+            margin-bottom: 30px;
+        }
+        .section-3 .feature {
+            text-align: center;
+            padding: 20px;
+        }
+        .section-3 .feature img {
             width: 100px;
-            margin: 10px;
-            transition: transform 0.3s ease;
+            margin-bottom: 15px;
         }
-        .integration-section img:hover {
-            transform: scale(1.1);
+        /* Section 4 */
+        .section-4 {
+            padding: 80px 0;
+            background-color: #f8f9fa;
         }
-        /* Section Témoignages */
-        .testimonial {
-            background-color: #f2f2f2;
-            padding: 50px 0;
+        .section-4 .content {
+            align-items: center;
+        }
+        .section-4 .content img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .section-4 .text-content {
+            max-width: 500px;
+        }
+        /* Section 5 */
+        .section-5 {
+            padding: 80px 0;
+        }
+        .section-5 h2 {
+            margin-bottom: 30px;
+        }
+        .section-5 ul {
+            list-style: none;
+            padding: 0;
+        }
+        .section-5 ul li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            position: relative;
+            padding-left: 25px;
+        }
+        .section-5 ul li::before {
+            content: "\f058";
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #ff5722;
+        }
+        /* Section 6 */
+        .section-6 {
+            padding: 80px 0;
+            text-align: center;
+            background-color: #ff5722;
+            color: #fff;
+        }
+        .section-6 .btn-primary {
+            background-color: #fff;
+            color: #ff5722;
+            border-color: #fff;
+            border-radius: 50px;
+            padding: 10px 30px;
+        }
+        .section-6 .btn-link {
+            display: block;
+            margin-top: 15px;
+            color: #fff;
+            text-decoration: none;
+        }
+        .section-6 .btn-link:hover {
+            text-decoration: underline;
+        }
+        /* Section 7 */
+        .section-7 {
+            padding: 80px 0;
+        }
+        .section-7 h2 {
+            margin-bottom: 50px;
+        }
+        .section-7 .testimonial {
+            text-align: center;
+            padding: 20px;
+        }
+        .section-7 .testimonial img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+        /* Section FAQ */
+        .faq-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
         }
         /* Footer */
         .footer {
@@ -112,9 +196,6 @@
         .footer a:hover {
             color: #ffffff;
         }
-        .footer ul li i {
-            font-size: 1.5rem;
-        }
         .footer .text-center p {
             margin-top: 20px;
             font-size: 0.875rem;
@@ -122,12 +203,22 @@
         }
         /* Responsivité */
         @media (max-width: 991px) {
-            .navbar-collapse {
+            .section-1 .content {
+                flex-direction: column-reverse;
                 text-align: center;
             }
-            .hero {
-                height: auto;
-                padding: 100px 0;
+            .section-4 .content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .section-2 .stat {
+                margin-bottom: 30px;
+            }
+            .section-3 .feature {
+                margin-bottom: 30px;
+            }
+            .section-7 .testimonial {
+                margin-bottom: 30px;
             }
         }
     </style>
@@ -168,216 +259,157 @@
         });
     </script>
 
-    <!-- Section Héros -->
-    <section class="hero">
+    <!-- Section 1 -->
+    <section class="section-1">
         <div class="container">
-            <div class="row align-items-center text-center text-md-start">
-                <div class="col-md-6">
-                    <h1 class="mb-4" style="animation: fadeInDown 1s;">
-                        Nous aidons les particuliers et les petites entreprises à gagner du temps et de l'argent
-                    </h1>
-                    <p class="mb-4" style="animation: fadeInUp 1s;">
-                        Grâce à l'IA
+            <div class="row content">
+                <div class="col-md-6 d-none d-md-block">
+                    <img src="influencer.jpg" alt="Influenceur Instagram">
+                </div>
+                <div class="col-md-6 text-content">
+                    <h1 class="mb-4">Nous aidons les influenceurs Instagram à gagner du temps et de l’argent grâce à l’IA</h1>
+                    <p class="mb-4">
+                        Focalise-toi sur la création de contenu et laisse l’IA gérer les tâches récurrentes.<br>
+                        Pour notre offre de lancement, nous nous occupons entièrement GRATUITEMENT de 3 clients sur le mois d’octobre. Nous ne pourrons pas prendre en charge plus de.
                     </p>
-                    <a href="#" class="cta-button">Commencer</a>
-                </div>
-                <div class="col-md-6 mt-5 mt-md-0">
-                    <img alt="Integration Illustration" class="img-fluid" src="chatbotos2.png" style="animation: fadeInRight 1s;"/>
+                    <a href="#" class="btn btn-primary">Postuler maintenant</a>
+                    <a href="#" class="btn-link">Je refuse de saisir cette opportunité unique</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Animations CSS -->
-    <style>
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-    </style>
-
-    <!-- Section Pourquoi Nous Choisir -->
-    <section class="info-section text-center">
+    <!-- Section 2 -->
+    <section class="section-2 text-center">
         <div class="container">
-            <h2 class="mb-5">Pourquoi Nous Choisir</h2>
+            <h2>Chiffres clés</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4 stat">
+                    <h3>2M</h3>
+                    <p>d’utilisateurs de Manychat</p>
+                </div>
+                <div class="col-md-4 stat">
+                    <h3>48%</h3>
+                    <p>taux de conversion moyen d’une campagne de génération de leads</p>
+                </div>
+                <div class="col-md-4 stat">
+                    <h3>12</h3>
+                    <p>UN AUTRE CHIFFRE</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="section-3">
+        <div class="container">
+            <h2 class="text-center">Notre offre est entièrement sécurisée</h2>
+            <p class="text-center mb-5">
+                Nous travaillons avec un outil partenaire officiel d’Instagram, déjà utilisé par 2M d’utilisateurs.<br>
+                L’IA ne va jamais contacter spontanément des gens, elle se contente de répondre aux DM et aux commentaires de tes posts, ce qui te permet de garder le contrôle.<br>
+                Nous configurons avec toi (et en fonction de tes attentes) l’IA pour qu’elle réponde le mieux possible.
+            </p>
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <i class="fas fa-bolt fa-3x mb-3 text-primary"></i>
-                    <h3>Rapidité</h3>
-                    <p>Des intégrations rapides qui vous font gagner du temps.</p>
+                <div class="col-md-4 feature">
+                    <img src="secure1.png" alt="Sécurité 1">
+                    <p>Partenaire officiel d’Instagram</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <i class="fas fa-shield-alt fa-3x mb-3 text-success"></i>
-                    <h3>Sécurité</h3>
-                    <p>Vos données sont en sécurité avec nous.</p>
+                <div class="col-md-4 feature">
+                    <img src="secure2.png" alt="Sécurité 2">
+                    <p>Contrôle total sur les interactions</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <i class="fas fa-thumbs-up fa-3x mb-3 text-info"></i>
-                    <h3>Fiabilité</h3>
-                    <p>Nous assurons un fonctionnement continu 24/7.</p>
+                <div class="col-md-4 feature">
+                    <img src="secure3.png" alt="Sécurité 3">
+                    <p>Configuration personnalisée</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Nos Intégrations -->
-    <section class="integration-section text-center">
+    <!-- Section 4 -->
+    <section class="section-4">
         <div class="container">
-            <h2 class="mb-5">Nos Intégrations</h2>
-            <div class="d-flex justify-content-center flex-wrap">
-                <img alt="Partner 1" src="partner1-logo.png"/>
-                <img alt="Partner 2" src="partner2-logo.png"/>
-                <img alt="Partner 3" src="partner3-logo.png"/>
-                <!-- Ajoutez plus de logos si nécessaire -->
+            <div class="row content">
+                <div class="col-md-6">
+                    <img src="team.jpg" alt="Notre Équipe">
+                </div>
+                <div class="col-md-6 text-content">
+                    <h2>Qui nous sommes</h2>
+                    <p>
+                        Notre équipe d’experts en intelligence artificielle et en marketing digital t’accompagnera dans tout le processus.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Témoignages -->
-    <section class="testimonial text-center">
+    <!-- Section 5 -->
+    <section class="section-5">
         <div class="container">
-            <h2 class="mb-5">Ce que Disent Nos Utilisateurs</h2>
+            <h2 class="text-center">Comment Ça Marche</h2>
+            <ul class="mt-4">
+                <li>Décris-nous qui tu es et ce que tu recherches via ce formulaire.</li>
+                <li>Nous configurons les automatisations sur ton compte.</li>
+                <li>L’IA commence à répondre à tes clients !</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section 6 -->
+    <section class="section-6">
+        <div class="container">
+            <h2>Pour notre offre de lancement, nous nous occupons entièrement GRATUITEMENT de 3 clients sur le mois d’octobre. Nous ne pourrons pas prendre en charge plus de.</h2>
+            <a href="#" class="btn btn-primary mt-4">Postuler maintenant</a>
+            <a href="#" class="btn-link">Je refuse de saisir cette opportunité unique</a>
+        </div>
+    </section>
+
+    <!-- Section 7 -->
+    <section class="section-7">
+        <div class="container">
+            <h2 class="text-center">Ils utilisent ManyChat</h2>
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <img src="user1.jpg" alt="Utilisateur 1" class="rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: cover;"/>
-                    <p>"Service génial, très fiable !"</p>
-                    <h5>- Alice Dupont</h5>
+                <div class="col-md-4 testimonial">
+                    <img src="kahlea_wade.jpg" alt="Kahlea Wade">
+                    <h5>Kahlea Wade</h5>
+                    <p>Entrepreneure avec 24.4k abonnés</p>
+                    <p>"Manychat nous a aidés à générer plus de 70 000 $ de ventes en 3 semaines. J'ai vu une augmentation MASSIVE des conversions et de l'engagement en une semaine d'utilisation de Manychat et je n'ai pas cessé d'utiliser les mots-clés depuis !"</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <img src="user2.jpg" alt="Utilisateur 2" class="rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: cover;"/>
-                    <p>"Intégrations rapides et faciles à utiliser."</p>
-                    <h5>- Jean Martin</h5>
+                <div class="col-md-4 testimonial">
+                    <img src="jenna_kutcher.jpg" alt="Jenna Kutcher">
+                    <h5>Jenna Kutcher</h5>
+                    <p>Experte en marketing digital avec 1 million d'abonnés</p>
+                    <p>"Manychat a changé la donne pour mon entreprise et la manière dont nous nous présentons en ligne."</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <img src="user3.jpg" alt="Utilisateur 3" class="rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: cover;"/>
-                    <p>"Leur équipe de support est incroyable."</p>
-                    <h5>- Sophie Leroy</h5>
+                <div class="col-md-4 testimonial">
+                    <img src="user_abc.jpg" alt="Utilisateur ABC">
+                    <h5>ABC</h5>
+                    <p>1M de followers</p>
+                    <p>"C'est trop bien"</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Appel à l'Action -->
-    <section class="text-center info-section" style="background-color: #007bff; color: white;">
-        <div class="container">
-            <h2 class="mb-4">Commencez à Intégrer Maintenant</h2>
-            <a href="#" class="cta-button">Essayer Gratuitement</a>
-        </div>
-    </section>
-
-    <!-- Section Carrousel -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Comment Ça Marche</h2>
-            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <!-- Slide 1 -->
-                    <div class="carousel-item active">
-                        <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <img src="your-image.png" class="d-block w-100" alt="Configuration Instantanée">
-                            </div>
-                            <div class="col-md-6">
-                                <h2>01. Configuration Instantanée</h2>
-                                <p>Connectez votre API et activez vos listes. Notre système générera automatiquement une base de connaissances pour chaque liste basée sur toutes les données de votre PMS.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Slide 2 -->
-                    <div class="carousel-item">
-                        <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <img src="your-image-2.png" class="d-block w-100" alt="Activez les Automatisations">
-                            </div>
-                            <div class="col-md-6">
-                                <h2>02. Activez les Automatisations</h2>
-                                <p>Générez des revenus en pilote automatique.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Slide 3 -->
-                    <div class="carousel-item">
-                        <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <img src="your-image-3.png" class="d-block w-100" alt="Mesurez le ROI">
-                            </div>
-                            <div class="col-md-6">
-                                <h2>03. Mesurez le ROI</h2>
-                                <p>Suivez les nouveaux revenus et autres métriques.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Contrôles du carrousel -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Précédent</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Suivant</span>
-                </button>
             </div>
         </div>
     </section>
 
     <!-- Section FAQ -->
-    <section class="faq-section py-5">
+    <section class="faq-section">
         <div class="container">
-            <h2 class="text-center mb-5">Questions Fréquemment Posées</h2>
+            <h2 class="text-center mb-5">FAQ</h2>
             <div class="accordion" id="faqAccordion">
                 <!-- Question 1 -->
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            Comment fonctionne votre produit ?
+                    <h2 class="accordion-header" id="faqHeadingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="false" aria-controls="faqCollapseOne">
+                            Y a-t-il un risque que je me fasse Shadowban ?
                         </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div id="faqCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqHeadingOne" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Notre produit fonctionne en intégrant vos systèmes via des API.
+                            Aucun risque : nous travaillons avec la plateforme Manychat, qui est partenaire officielle d’Instagram. Plus d’informations <a href="#">ici</a>.
                         </div>
                     </div>
                 </div>
-                <!-- Question 2 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Puis-je essayer gratuitement ?
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Oui, nous offrons un essai gratuit de 30 jours.
-                        </div>
-                    </div>
-                </div>
-                <!-- Question 3 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Quelles intégrations sont disponibles ?
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Nous proposons des intégrations avec Salesforce, HubSpot, et d'autres outils.
-                        </div>
-                    </div>
-                </div>
+                <!-- Ajoutez d'autres questions si nécessaire -->
             </div>
         </div>
     </section>
