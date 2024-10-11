@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Améliorée</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .section-chiffres-cles {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f7f7f7;
+            padding: 40px 20px;
+        }
+        .chiffre-cle {
+            text-align: center;
+            margin: 20px;
+        }
+        .chiffre-cle h3 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+        .chiffre-cle p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+        .chiffres-cles-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-comment-ca-marche {
+            background-color: #ffffff;
+            padding: 60px 20px;
+        }
+        .comment-marche-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .etape {
+            margin-bottom: 40px;
+        }
+        .etape h4 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .etape p {
+            font-size: 1rem;
+            color: #666;
+        }
+        @media (min-width: 768px) {
+            .chiffres-cles-container {
+                flex-direction: row;
+            }
+            .section-comment-ca-marche {
+                text-align: left;
+            }
+            .chiffre-cle {
+                flex: 1 1 calc(33.333% - 40px);
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <h1>Bienvenue sur Notre Service</h1>
+            <p>La meilleure solution pour vous accompagner.</p>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <h2>Découvrez nos solutions innovantes</h2>
+            <p>Améliorez votre quotidien grâce à nos services sur mesure.</p>
+            <button>En savoir plus</button>
+        </div>
+    </section>
+
+    <!-- Section 2 - Chiffres Clés -->
+    <section class="section-chiffres-cles">
+        <div class="chiffres-cles-container">
+            <div class="chiffre-cle">
+                <h3>100+</h3>
+                <p>Clients satisfaits</p>
+            </div>
+            <div class="chiffre-cle">
+                <h3>5 ans</h3>
+                <p>D'expertise dans le domaine</p>
+            </div>
+            <div class="chiffre-cle">
+                <h3>98%</h3>
+                <p>Taux de satisfaction</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Comment ça marche -->
+    <section class="section-comment-ca-marche">
+        <div class="comment-marche-container">
+            <h2>Comment ça marche ?</h2>
+            <div class="etape">
+                <h4>Étape 1 : Inscription</h4>
+                <p>Créez un compte pour commencer à profiter de nos services.</p>
+            </div>
+            <div class="etape">
+                <h4>Étape 2 : Choisissez votre plan</h4>
+                <p>Sélectionnez l'offre qui correspond le mieux à vos besoins.</p>
+            </div>
+            <div class="etape">
+                <h4>Étape 3 : Profitez de nos services</h4>
+                <p>Accédez à toutes les fonctionnalités et obtenez le meilleur support client.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Témoignages -->
+    <section class="section-temoignages">
+        <div class="temoignages-container">
+            <h2>Ce que disent nos clients</h2>
+            <div class="temoignage">
+                <p>"Service incroyable, je recommande vivement !"</p>
+                <p>- Jean Dupont</p>
+            </div>
+            <div class="temoignage">
+                <p>"Une équipe à l'écoute et des solutions efficaces."</p>
+                <p>- Marie Durant</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Notre Société. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
