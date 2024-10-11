@@ -40,6 +40,30 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
+        /* Menu Mobile */
+        .navbar-toggler {
+            border: none;
+            outline: none;
+        }
+        .navbar-toggler-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Section Chiffres Clés */
+        .info-section {
+            padding: 20% 0;
+        }
+        .info-section .col-md-4 {
+            transition: transform 0.3s ease;
+        }
+        .info-section .col-md-4:hover {
+            transform: translateY(-10px);
+        }
+        .info-section h3 {
+            font-size: 4rem;
+            color: #007bff;
+        }
+
         /* Section Notre Offre Entièrement Sécurisée */
         .integration-section {
             padding-top: 90px;
@@ -53,6 +77,84 @@
         }
         .integration-section img:hover {
             transform: scale(1.1);
+        }
+
+        /* Section Comment ça marche */
+        .how-it-works-section {
+            padding: 90px 0;
+            background-color: #ffffff;
+        }
+        .how-it-works-section h2 {
+            font-size: 2.5rem;
+        }
+        .how-it-works-section .subtitle {
+            font-size: 1.25rem;
+            color: #6c757d;
+            margin-bottom: 40px;
+        }
+        .how-it-works-section .col-md-4 {
+            padding: 20px;
+        }
+        .how-it-works-section img {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+        .how-it-works-section h5 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+
+        /* Section Témoignages */
+        .testimonial {
+            background-color: #f2f2f2;
+            padding: 50px 0;
+        }
+        .testimonial img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .testimonial img:hover {
+            transform: rotate(5deg);
+        }
+
+        /* Section FAQ */
+        .faq-section {
+            padding: 50px 15%;
+        }
+        .faq-section .accordion-item {
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .accordion-body {
+            padding: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #343a40;
+            padding: 40px 0;
+            color: white;
+        }
+        .footer a {
+            text-decoration: none;
+            color: #b0b0b0;
+        }
+        .footer a:hover {
+            color: white;
+        }
+
+        /* Animations de scroll */
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+        .scroll-fade.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         @media (max-width: 991px) {
@@ -85,7 +187,44 @@
         </div>
     </header>
 
-    <!-- Section: Notre Offre Entièrement Sécurisée -->
+    <!-- Section 1: Héros -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 order-md-2 content">
+                    <h1>Nous aidons les <span style="color: #E1306C;">influenceurs Instagram</span> à gagner du <span style="color: #007bff;">temps</span> et de l’<span style="color: #007bff;">argent</span> grâce à l’IA</h1>
+                    <p>Offre de lancement : en octobre, nous prenons en charge GRATUITEMENT 3 clients.</p>
+                    <button class="cta-button">Postuler maintenant</button>
+                    <p><a href="#" class="text-light">Je refuse de saisir cette opportunité unique</a></p>
+                </div>
+                <div class="col-md-6 order-md-1 image d-none d-md-block">
+                    <img alt="Integration Illustration" class="img-fluid" src="chatbotos2.png"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Chiffres Clés -->
+    <section class="info-section text-center">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-4 scroll-fade">
+                    <h3>2M</h3>
+                    <p>d’utilisateurs de Manychat</p>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <h3>48%</h3>
+                    <p>taux de conversion moyen d’une campagne de génération de leads</p>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <h3>12</h3>
+                    <p>UN AUTRE CHIFFRE</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Notre offre est entièrement sécurisée -->
     <section class="integration-section text-center">
         <div class="container">
             <div class="row">
@@ -105,6 +244,100 @@
                         <div class="mb-4 d-flex align-items-center">
                             <img src="partner3-logo.png" alt="Partner 3" style="width: 80px; margin-right: 15px;">
                             <p>Nous configurons avec toi (et en fonction de tes attentes) l’IA pour qu’elle réponde le mieux possible.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Comment ça marche -->
+    <section class="how-it-works-section text-center">
+        <div class="container">
+            <h2>Comment ça marche</h2>
+            <p class="subtitle">Découvrez comment notre solution peut vous aider à automatiser vos interactions et à gagner du temps.</p>
+            <div class="row mt-5">
+                <div class="col-md-4 scroll-fade">
+                    <img alt="Step 1" src="step1-image.png" />
+                    <h5>Étape 1</h5>
+                    <p>Décris-nous qui tu es et ce que tu recherches via ce formulaire.</p>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <img alt="Step 2" src="step2-image.png" />
+                    <h5>Étape 2</h5>
+                    <p>Nous configurons les automatisations sur ton compte.</p>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <img alt="Step 3" src="step3-image.png" />
+                    <h5>Étape 3</h5>
+                    <p>L’IA commence à répondre à tes clients !</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Témoignages -->
+    <section class="testimonial text-center">
+        <div class="container">
+            <h2>Ils utilisent ManyChat :</h2>
+            <div class="row">
+                <div class="col-md-4 scroll-fade">
+                    <img src="user-photo.jpg" alt="Kahlea Wade"/>
+                    <h5>Kahlea Wade, entrepreneure avec 24.4k abonnés :</h5>
+                    <p>"Manychat nous a aidés à générer plus de 70 000 $ de ventes en 3 semaines."</p>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <img src="user2-photo.jpg" alt="Jenna Kutcher"/>
+                    <h5>Jenna Kutcher, experte en marketing digital avec 1 million d'abonnés :</h5>
+                    <p>"Manychat a changé la donne pour mon entreprise."</p>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <img src="user3-photo.jpg" alt="ABC"/>
+                    <h5>ABC, 1M de followers :</h5>
+                    <p>"C'est trop bien"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: FAQ -->
+    <section class="faq-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">FAQ</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Y'a-t-il un risque que je me fasse Shadowban ?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Aucun risque : nous travaillons avec la plateforme Manychat, qui est partenaire officielle d’Instagram.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Comment puis-je configurer l'IA ?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Nous vous guidons étape par étape pour configurer l'IA selon vos besoins.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Est-ce que Manychat fonctionne en dehors d'Instagram ?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Oui, Manychat est compatible avec d'autres plateformes telles que Facebook Messenger et WhatsApp.
                         </div>
                     </div>
                 </div>
@@ -158,5 +391,43 @@
 
     <!-- Scripts JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Fonction pour les animations de scroll
+        const scrollElements = document.querySelectorAll('.scroll-fade');
+
+        const elementInView = (el, dividend = 1) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop <=
+                (window.innerHeight || document.documentElement.clientHeight) / dividend
+            );
+        };
+
+        const displayScrollElement = (element) => {
+            element.classList.add('show');
+        };
+
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 1.25)) {
+                    displayScrollElement(el);
+                }
+            });
+        };
+
+        window.addEventListener('scroll', () => {
+            handleScrollAnimation();
+        });
+
+        // Ajouter ombre au navbar au scroll
+        window.addEventListener('scroll', function() {
+            var navbar = document.getElementById('mainNavbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow');
+            } else {
+                navbar.classList.remove('shadow');
+            }
+        });
+    </script>
 </body>
 </html>
