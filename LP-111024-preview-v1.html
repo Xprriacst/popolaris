@@ -51,7 +51,7 @@
 
         /* Section Chiffres Clés */
         .info-section {
-            padding: 20% 0;
+            padding: 14% 0;
         }
         .info-section .col-md-4 {
             transition: transform 0.3s ease;
@@ -83,17 +83,22 @@
             align-items: flex-start;
             margin-bottom: 20px;
         }
+        /* Centrer verticalement le contenu */
+        .integration-section .row {
+            align-items: center;
+        }
 
         /* Section Ce que tu gagnes */
         .benefits-section img {
-            width: 80px;
+            width: 240px;
             margin-bottom: 20px;
             transition: transform 0.3s ease;
         }
 
         /* Section Comment ça marche */
         .how-it-works-section {
-            padding: 90px 0;
+            padding-top: 63px;
+            padding-bottom: 90px;
             background-color: #ffffff;
         }
         .how-it-works-section h2 {
@@ -102,7 +107,7 @@
         .how-it-works-section .subtitle {
             font-size: 1.25rem;
             color: #6c757d;
-            margin-bottom: 40px;
+            margin-bottom: 48px;
         }
         .how-it-works-section .col-md-4 {
             padding: 20px;
@@ -131,6 +136,22 @@
         .testimonial img:hover {
             transform: rotate(5deg);
         }
+        /* Espacement entre le titre et les blocs */
+        .testimonial h2 {
+            margin-bottom: 48px;
+        }
+
+        /* Section Offre de lancement */
+        #launch-offer {
+            padding-bottom: 11.2%;
+        }
+        #launch-offer p {
+            font-size: 1.5rem;
+        }
+        #launch-offer .container {
+            padding-left: 15%;
+            padding-right: 15%;
+        }
 
         /* Section FAQ */
         .faq-section {
@@ -158,6 +179,14 @@
             color: white;
         }
 
+        /* Lien dans la section Hero */
+        .hero-link {
+            color: #007bff;
+            font-weight: bold;
+            text-decoration: underline;
+            font-size: 1.1rem;
+        }
+
         /* Animations de scroll */
         .scroll-fade {
             opacity: 0;
@@ -175,6 +204,42 @@
             }
             .integration-section .row {
                 flex-direction: column;
+            }
+        }
+
+        /* Modifications pour la version mobile uniquement */
+        @media (max-width: 767px) {
+            /* Section Hero */
+            .hero h1 {
+                text-align: center;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            /* Section Notre Offre Entièrement Sécurisée */
+            .integration-section h2,
+            .integration-section h4 {
+                margin-left: 20px;
+                margin-right: 20px;
+                text-align: center;
+            }
+            .integration-section h4 {
+                font-size: 1rem;
+            }
+            /* Section Qui nous sommes */
+            .info-section .col-md-6:last-child p {
+                margin-left: 20px;
+                margin-right: 20px;
+                text-align: center;
+            }
+            /* Section Ils utilisent ManyChat */
+            .testimonial .col-md-4 {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            /* Section FAQ */
+            .faq-section {
+                padding-left: 5%;
+                padding-right: 5%;
             }
         }
     </style>
@@ -210,7 +275,7 @@
                     <h1>Nous aidons les <span style="color: #E1306C;">influenceurs Instagram</span> à gagner du <span style="color: #007bff;">temps</span> et de l’<span style="color: #007bff;">argent</span> grâce à l’IA</h1>
                     <p>Offre de lancement : en octobre, nous prenons en charge GRATUITEMENT 3 clients.</p>
                     <button class="cta-button">Postuler maintenant</button>
-                    <p><a href="#" class="text-light">Je refuse de saisir cette opportunité unique</a></p>
+                    <p><a href="#" class="hero-link">Je refuse de saisir cette opportunité unique</a></p>
                 </div>
                 <div class="col-md-6 order-md-1 image d-none d-md-block">
                     <img alt="Integration Illustration" class="img-fluid" src="chatbotos2.png"/>
@@ -242,7 +307,7 @@
     <!-- Section 3: Notre offre est entièrement sécurisée -->
     <section class="integration-section">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-md-6">
                     <h2>Notre offre est entièrement sécurisée</h2>
                     <!-- Nouveau sous-titre ajouté ici -->
@@ -335,11 +400,11 @@
     </section>
 
     <!-- Section 7: Offre de lancement -->
-    <section class="info-section text-center">
+    <section class="info-section text-center" id="launch-offer">
         <div class="container">
             <p>Offre de lancement : en octobre, nous prenons en charge GRATUITEMENT 3 clients !</p>
             <button class="cta-button">Postuler maintenant</button>
-            <p><a href="#" class="text-light">Je refuse de saisir cette opportunité unique</a></p>
+            <p><a href="#" class="hero-link">Je refuse de saisir cette opportunité unique</a></p>
         </div>
     </section>
 
