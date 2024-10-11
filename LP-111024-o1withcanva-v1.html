@@ -76,86 +76,16 @@
         .integration-section img:hover {
             transform: scale(1.1);
         }
-        .integration-section .offer-block {
-            margin-bottom: 40px;
-        }
 
-        /* Section Comment ça marche */
-        .how-it-works-section {
-            padding: 90px 0;
-            background-color: #ffffff;
+        .integration-section .offer-content {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
         }
-        .how-it-works-section h2 {
-            font-size: 2.5rem;
-        }
-        .how-it-works-section .subtitle {
-            font-size: 1.25rem;
-            color: #6c757d;
-            margin-bottom: 40px;
-        }
-        .how-it-works-section .col-md-4 {
-            padding: 20px;
-        }
-        .how-it-works-section img {
-            width: 80px;
-            margin-bottom: 20px;
-        }
-        .how-it-works-section h5 {
-            font-size: 1.5rem;
-            margin-top: 20px;
-        }
-
-        /* Section Témoignages */
-        .testimonial {
-            background-color: #f2f2f2;
-            padding: 50px 0;
-        }
-        .testimonial img {
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-        .testimonial img:hover {
-            transform: rotate(5deg);
-        }
-
-        /* Section FAQ */
-        .faq-section {
-            padding: 50px 15%;
-        }
-        .faq-section .accordion-item {
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .accordion-body {
-            padding: 20px;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: #343a40;
-            padding: 40px 0;
-            color: white;
-        }
-        .footer a {
-            text-decoration: none;
-            color: #b0b0b0;
-        }
-        .footer a:hover {
-            color: white;
-        }
-
-        /* Animations de scroll */
-        .scroll-fade {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s ease;
-        }
-        .scroll-fade.show {
-            opacity: 1;
-            transform: translateY(0);
+        .integration-section .text-block {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
         }
 
         @media (max-width: 991px) {
@@ -189,63 +119,75 @@
     </header>
 
     <!-- Section 3: Notre offre est entièrement sécurisée -->
-    <section class="integration-section text-center">
+    <section class="integration-section">
         <div class="container">
-            <h2>Notre offre est entièrement sécurisée</h2>
-            <div class="offer-block scroll-fade">
-                <img alt="Partner 1" src="partner1-logo.png"/>
-                <p>Nous travaillons avec un outil partenaire officiel d’Instagram, déjà utilisé par 2M d’utilisateurs.</p>
-            </div>
-            <div class="offer-block scroll-fade">
-                <img alt="Partner 2" src="partner2-logo.png"/>
-                <p>L’IA ne va jamais contacter spontanément des gens, elle se contente de répondre aux DM, et aux commentaires de tes posts, ce qui te permet de garder le contrôle.</p>
-            </div>
-            <div class="offer-block scroll-fade">
-                <img alt="Partner 3" src="partner3-logo.png"/>
-                <p>Nous configurons avec toi (et en fonction de tes attentes) l’IA pour qu’elle réponde le mieux possible.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Notre offre est entièrement sécurisée</h2>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-block">
+                        <img alt="Partner 1" src="partner1-logo.png"/>
+                        <p>Nous travaillons avec un outil partenaire officiel d’Instagram, déjà utilisé par 2M d’utilisateurs.</p>
+                    </div>
+                    <div class="text-block mt-4">
+                        <img alt="Partner 2" src="partner2-logo.png"/>
+                        <p>L’IA ne va jamais contacter spontanément des gens, elle se contente de répondre aux DM, et aux commentaires de tes posts, ce qui te permet de garder le contrôle.</p>
+                    </div>
+                    <div class="text-block mt-4">
+                        <img alt="Partner 3" src="partner3-logo.png"/>
+                        <p>Nous configurons avec toi (et en fonction de tes attentes) l’IA pour qu’elle réponde le mieux possible.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>À propos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Notre mission</a></li>
+                        <li><a href="#">Notre équipe</a></li>
+                        <li><a href="#">Carrières</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Liens Utiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Politique de Confidentialité</a></li>
+                        <li><a href="#">Conditions Générales</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Centre d'aide</a></li>
+                        <li><a href="#">Nous Contacter</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Suivez-nous</h5>
+                    <ul class="list-unstyled d-flex">
+                        <li><a href="#" class="me-3"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#" class="me-3"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" class="me-3"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>© 2024 Nom de l'Entreprise - Tous Droits Réservés</p>
+            </div>
+        </div>
+    </footer>
+
     <!-- Scripts JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Fonction pour les animations de scroll
-        const scrollElements = document.querySelectorAll('.scroll-fade');
-
-        const elementInView = (el, dividend = 1) => {
-            const elementTop = el.getBoundingClientRect().top;
-            return (
-                elementTop <=
-                (window.innerHeight || document.documentElement.clientHeight) / dividend
-            );
-        };
-
-        const displayScrollElement = (element) => {
-            element.classList.add('show');
-        };
-
-        const handleScrollAnimation = () => {
-            scrollElements.forEach((el) => {
-                if (elementInView(el, 1.25)) {
-                    displayScrollElement(el);
-                }
-            });
-        };
-
-        window.addEventListener('scroll', () => {
-            handleScrollAnimation();
-        });
-
-        // Ajouter ombre au navbar au scroll
-        window.addEventListener('scroll', function() {
-            var navbar = document.getElementById('mainNavbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow');
-            } else {
-                navbar.classList.remove('shadow');
-            }
-        });
-    </script>
 </body>
 </html>
