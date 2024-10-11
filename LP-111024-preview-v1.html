@@ -208,6 +208,7 @@
         }
 
         /* Modifications pour la version mobile uniquement */
+/* Modifications pour la version mobile uniquement */
 @media (max-width: 767px) {
     /* Section Hero */
     .hero {
@@ -220,11 +221,14 @@
         margin-top: 20px;
     }
     .hero p,
-    .hero .cta-button,
     .hero .hero-link {
         text-align: center;
         margin-left: 20px;
         margin-right: 20px;
+    }
+    .hero .cta-button {
+        display: block;
+        margin: 20px auto;
     }
 
     /* Section Notre Offre Entièrement Sécurisée */
@@ -248,7 +252,7 @@
     /* Section Ils utilisent ManyChat */
     .testimonial .col-md-4 {
         margin-left: 20px;
-        margin-right: 20px;
+        margin-right: 10%; /* Marge droite de 10% */
     }
 
     /* Section FAQ */
@@ -257,6 +261,7 @@
         padding-right: 5%;
     }
 }
+
         }
     </style>
 </head>
