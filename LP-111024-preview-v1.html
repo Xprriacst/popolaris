@@ -83,33 +83,12 @@
             align-items: flex-start;
             margin-bottom: 20px;
         }
-        /* Styles pour le titre et le sous-titre */
-        .integration-section .col-md-6:first-child {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .integration-section .col-md-6 h2 {
-            margin-bottom: 10px;
-        }
-        .integration-section .col-md-6 .subtitle {
-            font-size: 1.25rem;
-            color: #6c757d;
-            margin-bottom: 0;
-        }
 
         /* Section Ce que tu gagnes */
         .benefits-section img {
             width: 80px;
             margin-bottom: 20px;
             transition: transform 0.3s ease;
-        }
-        .benefits-section h3 {
-            font-size: 1.5rem;
-            margin-top: 20px;
-        }
-        .benefits-section p {
-            font-size: 1rem;
         }
 
         /* Section Comment ça marche */
@@ -224,10 +203,41 @@
     </header>
 
     <!-- Section 1: Héros -->
-    <!-- ... (inchangé) -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 order-md-2 content">
+                    <h1>Nous aidons les <span style="color: #E1306C;">influenceurs Instagram</span> à gagner du <span style="color: #007bff;">temps</span> et de l’<span style="color: #007bff;">argent</span> grâce à l’IA</h1>
+                    <p>Offre de lancement : en octobre, nous prenons en charge GRATUITEMENT 3 clients.</p>
+                    <button class="cta-button">Postuler maintenant</button>
+                    <p><a href="#" class="text-light">Je refuse de saisir cette opportunité unique</a></p>
+                </div>
+                <div class="col-md-6 order-md-1 image d-none d-md-block">
+                    <img alt="Integration Illustration" class="img-fluid" src="chatbotos2.png"/>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Section 2: Chiffres Clés -->
-    <!-- ... (inchangé) -->
+    <section class="info-section text-center">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-4 scroll-fade">
+                    <h3>2M</h3>
+                    <p>d’utilisateurs de Manychat</p>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <h3>48%</h3>
+                    <p>taux de conversion moyen d’une campagne de génération de leads</p>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <h3>12</h3>
+                    <p>UN AUTRE CHIFFRE</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Section 3: Notre offre est entièrement sécurisée -->
     <section class="integration-section">
@@ -235,7 +245,8 @@
             <div class="row">
                 <div class="col-md-6">
                     <h2>Notre offre est entièrement sécurisée</h2>
-                    <p class="subtitle">Votre sécurité est notre priorité</p>
+                    <!-- Nouveau sous-titre ajouté ici -->
+                    <h4>Nous garantissons la sécurité de vos données et de vos interactions.</h4>
                 </div>
                 <div class="col-md-6">
                     <div class="block">
@@ -258,44 +269,192 @@
     <!-- Section 4: Ce que tu gagnes -->
     <section class="integration-section benefits-section text-center">
         <div class="container">
-            <!-- Titre supprimé -->
+            <!-- Suppression du titre h2 ici -->
+
             <div class="row mt-5">
+                <!-- Bloc 1 -->
                 <div class="col-md-4 scroll-fade">
-                    <img alt="Gagne du temps de temps" src="your-illust.png"/>
-                    <h3>Gagne du temps de temps</h3>
-                    <p>Automatise tes <strong>DM récurrents</strong>, avec notre IA qui réponds en copiant <strong>ta manière de parler</strong>.</p>
+                    <img alt="Gain de Temps" src="your-illust.png"/>
+                    <h5>Gagne du temps</h5>
+                    <p>Automatise tes <strong>DM récurrents</strong>, avec notre IA qui répond en copiant <strong>ta manière de parler</strong>.</p>
                 </div>
+                <!-- Bloc 2 -->
                 <div class="col-md-4 scroll-fade">
-                    <img alt="Augmente ton engagement" src="your-illust-2.png"/>
-                    <h3>Augmente ton engagement</h3>
-                    <p>L'IA réponds automatiquement aux <strong>commentaires de tes posts</strong> avec le <strong>même ton que toi</strong>.</p>
+                    <img alt="Engagement" src="your-illust-2.png"/>
+                    <h5>Augmente ton engagement</h5>
+                    <p>L'IA répond automatiquement aux <strong>commentaires de tes posts</strong> avec le <strong>même ton que toi</strong>.</p>
                 </div>
+                <!-- Bloc 3 -->
                 <div class="col-md-4 scroll-fade">
-                    <img alt="Développe tes ventes" src="your-illust-3.png"/>
-                    <h3>Développe tes ventes</h3>
-                    <p>Nous te proposons des <strong>stratégies de ventes personnalisées</strong> (génération de leads ou vente direct) grâce à des <strong>séquences de messages</strong> envoyées en DM.</p>
+                    <img alt="Boost Ventes" src="your-illust-3.png"/>
+                    <h5>Développe tes ventes</h5>
+                    <p>Nous te proposons des <strong>stratégies de ventes personnalisées</strong> (génération de leads ou vente directe) grâce à des <strong>séquences de messages</strong> envoyées en DM.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Section 5: Qui nous sommes -->
-    <!-- ... (inchangé) -->
+    <section class="info-section text-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img alt="Notre Équipe" class="img-fluid" src="Creative team-rafiki.png"/>
+                </div>
+                <div class="col-md-6">
+                    <h2>Qui nous sommes</h2>
+                    <p>Notre équipe d’experts en intelligence artificielle et en Marketing Digital t’accompagnera dans tout le processus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Section 6: Comment ça marche -->
-    <!-- ... (inchangé) -->
+    <section class="how-it-works-section text-center">
+        <div class="container">
+            <h2>Comment ça marche</h2>
+            <p class="subtitle">Découvrez comment notre solution peut vous aider à automatiser vos interactions et à gagner du temps.</p>
+            <div class="row mt-5">
+                <div class="col-md-4 scroll-fade">
+                    <img alt="Step 1" src="step1-image.png" />
+                    <h5>Étape 1</h5>
+                    <p>Décris-nous qui tu es et ce que tu recherches via ce formulaire.</p>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <img alt="Step 2" src="step2-image.png" />
+                    <h5>Étape 2</h5>
+                    <p>Nous configurons les automatisations sur ton compte.</p>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <img alt="Step 3" src="step3-image.png" />
+                    <h5>Étape 3</h5>
+                    <p>L’IA commence à répondre à tes clients !</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Section 7: Offre de lancement -->
-    <!-- ... (inchangé) -->
+    <section class="info-section text-center">
+        <div class="container">
+            <p>Pour notre offre de lancement, nous nous occupons entièrement GRATUITEMENT de 3 clients sur le mois d’octobre. Nous ne pourrons pas prendre en charge plus de.</p>
+            <button class="cta-button">Postuler maintenant</button>
+            <p><a href="#" class="text-light">Je refuse de saisir cette opportunité unique</a></p>
+        </div>
+    </section>
 
     <!-- Section 8: Ils utilisent ManyChat -->
-    <!-- ... (inchangé) -->
+    <section class="testimonial text-center">
+        <div class="container">
+            <h2>Ils utilisent ManyChat :</h2>
+            <div class="row">
+                <div class="col-md-4 scroll-fade">
+                    <img src="user-photo.jpg" alt="Kahlea Wade"/>
+                    <h5>Kahlea Wade, entrepreneure avec 24.4k abonnés :</h5>
+                    <p>"Manychat nous a aidés à générer plus de 70 000 $ de ventes en 3 semaines. J'ai vu une augmentation MASSIVE des conversions et de l'engagement en une semaine d'utilisation de Manychat et je n'ai pas cessé d'utiliser les mots-clés depuis !"</p>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <img src="user2-photo.jpg" alt="Jenna Kutcher"/>
+                    <h5>Jenna Kutcher, experte en marketing digital avec 1 million d'abonnés :</h5>
+                    <p>"Manychat a changé la donne pour mon entreprise et la manière dont nous nous présentons en ligne."</p>
+                </div>
+                <div class="col-md-4 scroll-fade">
+                    <img src="user3-photo.jpg" alt="ABC"/>
+                    <h5>ABC, 1M de followers :</h5>
+                    <p>"C'est trop bien"</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Section 9: FAQ -->
-    <!-- ... (inchangé) -->
+    <section class="faq-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">FAQ</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Y'a-t-il un risque que je me fasse Shadowban ?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Aucun risque : nous travaillons avec la plateforme Manychat, qui est partenaire officielle d’Instagram. Plus d’information ici.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Comment puis-je configurer l'IA ?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Nous vous guidons étape par étape pour configurer l'IA selon vos besoins, et nous nous assurons qu'elle fonctionne de manière optimale pour répondre à vos clients.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Est-ce que Manychat fonctionne en dehors d'Instagram ?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Oui, Manychat est compatible avec d'autres plateformes telles que Facebook Messenger, WhatsApp et plus encore, pour une gestion centralisée de vos communications.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <!-- ... (inchangé) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>À propos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Notre mission</a></li>
+                        <li><a href="#">Notre équipe</a></li>
+                        <li><a href="#">Carrières</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Liens Utiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Politique de Confidentialité</a></li>
+                        <li><a href="#">Conditions Générales</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Centre d'aide</a></li>
+                        <li><a href="#">Nous Contacter</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Suivez-nous</h5>
+                    <ul class="list-unstyled d-flex">
+                        <li><a href="#" class="me-3"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#" class="me-3"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" class="me-3"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>© 2024 Nom de l'Entreprise - Tous Droits Réservés</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Scripts JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
