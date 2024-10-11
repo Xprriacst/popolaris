@@ -34,6 +34,9 @@
         .shadow {
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+        #mainNavbar.scrolled {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
         /* Menu Mobile */
         .navbar-toggler {
@@ -63,15 +66,29 @@
         .integration-section {
             padding-top: 90px;
             padding-bottom: 90px;
-            background-color: #f8f9fa;
+            background-color: #1f2e2b;
+            color: #f1f1f1;
         }
-        .integration-section img {
-            width: 80px;
-            margin: 10px;
-            transition: transform 0.3s ease;
+        .integration-section h2 {
+            font-size: 2.5rem;
+            color: #ffffff;
         }
-        .integration-section img:hover {
-            transform: scale(1.1);
+        .integration-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .integration-item img {
+            width: 50px;
+            margin-right: 15px;
+        }
+        .integration-item h5 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        .integration-item p {
+            margin: 0;
+            color: #b0b0b0;
         }
 
         /* Section Comment ça marche */
@@ -113,6 +130,11 @@
         }
         .testimonial img:hover {
             transform: rotate(5deg);
+        }
+
+        /* Section FAQ */
+        .faq-section {
+            padding: 50px 15%;
         }
 
         /* Footer */
@@ -211,18 +233,25 @@
     <section class="integration-section text-center">
         <div class="container">
             <h2>Notre offre est entièrement sécurisée</h2>
-            <div class="row mt-5">
-                <div class="col-md-4 scroll-fade">
-                    <img alt="Partner 1" src="partner1-logo.png"/>
-                    <p>Nous travaillons avec un outil partenaire officiel d’Instagram, déjà utilisé par 2M d’utilisateurs.</p>
+            <div class="integration-item">
+                <img alt="Icon" src="partner1-logo.png">
+                <div>
+                    <h5>Stored locally</h5>
+                    <p>For your privacy, all of the recordings are stored locally on your Mac. No one else can access them - not even us!</p>
                 </div>
-                <div class="col-md-4 scroll-fade">
-                    <img alt="Partner 2" src="partner2-logo.png"/>
-                    <p>L’IA ne va jamais contacter spontanément des gens, elle se contente de répondre aux DM, et aux commentaires de tes posts, ce qui te permet de garder le contrôle.</p>
+            </div>
+            <div class="integration-item">
+                <img alt="Icon" src="partner2-logo.png">
+                <div>
+                    <h5>No cloud integration required</h5>
+                    <p>It all just works automatically. No need to connect to a bunch of different services like Gmail, Dropbox, or Slack.</p>
                 </div>
-                <div class="col-md-4 scroll-fade">
-                    <img alt="Partner 3" src="partner3-logo.png"/>
-                    <p>Nous configurons avec toi (et en fonction de tes attentes) l’IA pour qu’elle réponde le mieux possible.</p>
+            </div>
+            <div class="integration-item">
+                <img alt="Icon" src="partner3-logo.png">
+                <div>
+                    <h5>Private browsing not captured</h5>
+                    <p>Easily pause or delete recordings at any time. Decide which apps not to record, and auto-exclude incognito browsing windows.</p>
                 </div>
             </div>
         </div>
@@ -439,6 +468,16 @@
 
         window.addEventListener('scroll', () => {
             handleScrollAnimation();
+        });
+
+        // Ajouter ombre au navbar au scroll
+        window.addEventListener('scroll', function() {
+            var navbar = document.getElementById('mainNavbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow');
+            } else {
+                navbar.classList.remove('shadow');
+            }
         });
     </script>
 </body>
