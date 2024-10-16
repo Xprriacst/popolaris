@@ -250,10 +250,20 @@
     }
 
     /* Section Ils utilisent ManyChat */
+    
+@media (max-width: 767px) {
     .testimonial .col-md-4 {
-        margin-left: 20px;
-        margin-right: 20px; 
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 15px; /* Ajoute de l'espace intérieur pour éviter le contenu coupé */
+        box-sizing: border-box; /* Assure que la largeur ne déborde pas avec le padding */
     }
+    .testimonial .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
 
     /* Section FAQ */
     .faq-section {
@@ -279,9 +289,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Fonctionnalités</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#hero">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#fonctionnalites">Fonctionnalités</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                     </ul>
                 </div>
             </nav>
@@ -289,7 +299,7 @@
     </header>
 
     <!-- Section 1: Héros -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 order-md-2 content">
@@ -353,7 +363,7 @@
     </section>
 
     <!-- Section 4: Ce que tu gagnes -->
-    <section class="integration-section benefits-section text-center">
+    <section class="integration-section benefits-section text-center" id="fonctionnalites">
         <div class="container">
             <!-- Suppression du titre h2 ici -->
 
@@ -454,7 +464,7 @@
     </section>
 
     <!-- Section 9: FAQ -->
-    <section class="faq-section py-5">
+    <section class="faq-section py-5" id="faq">
         <div class="container">
             <h2 class="text-center mb-4">FAQ</h2>
             <div class="accordion" id="faqAccordion">
