@@ -250,10 +250,20 @@
     }
 
     /* Section Ils utilisent ManyChat */
+    
+@media (max-width: 767px) {
     .testimonial .col-md-4 {
-        margin-left: 20px;
-        margin-right: 20px; 
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 15px; /* Ajoute de l'espace intérieur pour éviter le contenu coupé */
+        box-sizing: border-box; /* Assure que la largeur ne déborde pas avec le padding */
     }
+    .testimonial .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
 
     /* Section FAQ */
     .faq-section {
