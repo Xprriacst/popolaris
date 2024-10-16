@@ -1,0 +1,180 @@
+    /* Menu Desktop (Navbar) */
+    .navbar-white {
+        background-color: #ffffff;
+        transition: box-shadow 0.3s ease;
+    }
+    .shadow {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    #mainNavbar.scrolled {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Menu Mobile */
+    .navbar-toggler {
+        border: none;
+        outline: none;
+    }
+    .navbar-toggler-icon {
+        font-size: 1.5rem;
+    }
+
+    /* Section Chiffres Clés */
+    .info-section {
+        padding: 14% 0;
+    }
+    .info-section .col-md-4 {
+        transition: transform 0.3s ease;
+    }
+    .info-section .col-md-4:hover {
+        transform: translateY(-10px);
+    }
+    .info-section h3 {
+        font-size: 4rem;
+        color: #007bff;
+    }
+
+    /* Section Notre Offre Entièrement Sécurisée */
+    .integration-section {
+        padding-top: 90px;
+        padding-bottom: 90px;
+        background-color: #f8f9fa;
+    }
+    .integration-section img {
+        width: 80px;
+        margin: 10px;
+        transition: transform 0.3s ease;
+    }
+    .integration-section img:hover {
+        transform: scale(1.1);
+    }
+    .integration-section .block {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+    /* Centrer verticalement le contenu */
+    .integration-section .row {
+        align-items: center;
+    }
+
+    /* Section Ce que tu gagnes */
+    .benefits-section img {
+        width: 240px;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    /* Section Comment ça marche */
+    .how-it-works-section {
+        padding-top: 63px;
+        padding-bottom: 90px;
+        background-color: #ffffff;
+    }
+    .how-it-works-section h2 {
+        font-size: 2.5rem;
+    }
+    .how-it-works-section .subtitle {
+        font-size: 1.25rem;
+        color: #6c757d;
+        margin-bottom: 48px;
+    }
+    .how-it-works-section .col-md-4 {
+        padding: 20px;
+    }
+    .how-it-works-section img {
+        width: 80px;
+        margin-bottom: 20px;
+    }
+    .how-it-works-section h5 {
+        font-size: 1.5rem;
+        margin-top: 20px;
+    }
+
+    /* Section Témoignages */
+    .testimonial {
+        background-color: #f2f2f2;
+        padding: 50px 0;
+    }
+    .testimonial img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+    }
+    .testimonial img:hover {
+        transform: rotate(5deg);
+    }
+    /* Espacement entre le titre et les blocs */
+    .testimonial h2 {
+        margin-bottom: 48px;
+    }
+
+    /* Section Offre de lancement */
+    #launch-offer {
+        padding-bottom: 11.2%;
+    }
+    #launch-offer p {
+        font-size: 1.5rem;
+    }
+    #launch-offer .container {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+    /* Section FAQ */
+    .faq-section {
+        padding: 50px 15%;
+    }
+    .faq-section .accordion-item {
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .accordion-body {
+        padding: 20px;
+    }
+
+    /* Footer */
+    .footer {
+        background-color: #343a40;
+        padding: 40px 0;
+        color: white;
+    }
+    .footer a {
+        text-decoration: none;
+        color: #b0b0b0;
+    }
+    .footer a:hover {
+        color: white;
+    }
+
+    /* Lien dans la section Hero */
+    .hero-link {
+        color: #007bff;
+        font-weight: bold;
+        text-decoration: underline;
+        font-size: 1.1rem;
+    }
+
+    /* Animations de scroll */
+    .scroll-fade {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s ease;
+    }
+    .scroll-fade.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media (max-width: 991px) {
+        .navbar-collapse {
+            text-align: center;
+        }
+        .integration-section .row {
+            flex-direction: column;
+        }
+    }
+
+    /* Modifications pour la version mobile uniquement */
