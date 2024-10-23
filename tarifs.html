@@ -42,6 +42,24 @@
             display: flex;
             justify-content: space-around;
         }
+
+        .details-container {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .details-container h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .details-container ul {
+            padding-left: 20px;
+        }
+
+        .details-container ul li {
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -51,12 +69,29 @@
             <label for="appartementSliderBasic">Nombre d'appartements : <span id="numberOfApartmentsBasic">1</span></label>
             <input type="range" id="appartementSliderBasic" min="1" max="150" value="1">
             <div class="price-display">Tarif mensuel : <span id="monthlyPriceBasic">50</span> &euro;</div>
+            <div class="details-container">
+                <h3>Détails du plan Basique :</h3>
+                <ul>
+                    <li>Réponses automatisées basiques</li>
+                    <li>Support limité (email uniquement)</li>
+                    <li>Pas de personnalisation des messages</li>
+                </ul>
+            </div>
         </div>
         <div class="pricing-container" id="standardPlan">
             <h2>Tarification Standard</h2>
             <label for="appartementSliderStandard">Nombre d'appartements : <span id="numberOfApartmentsStandard">1</span></label>
             <input type="range" id="appartementSliderStandard" min="1" max="150" value="1">
             <div class="price-display">Tarif mensuel : <span id="monthlyPriceStandard">70</span> &euro;</div>
+            <div class="details-container">
+                <h3>Détails du plan Standard :</h3>
+                <ul>
+                    <li>Réponses automatisées avancées</li>
+                    <li>Support prioritaire (email et chat)</li>
+                    <li>Personnalisation des messages</li>
+                    <li>Rapports mensuels sur la performance des réponses</li>
+                </ul>
+            </div>
         </div>
     </div>
 
