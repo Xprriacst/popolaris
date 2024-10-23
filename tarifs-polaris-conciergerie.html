@@ -99,13 +99,16 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin: 30px 0;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
         .slider-container .icon {
             margin-bottom: 20px;
         }
         .slider-container input[type="range"] {
-            width: 80%;
-            margin: 20px 0;
+            width: 60%;
+            margin: 20px;
         }
         .apartment-selector {
             font-size: 1.5em;
@@ -204,12 +207,9 @@
             </div>
             <!-- Barre de Curseur -->
             <input type="range" id="appartementSlider" min="1" max="150" value="1">
-            <!-- Nombre d'appartements avec boutons d'incrémentation et décrémentation -->
-            <div class="apartment-selector d-flex justify-content-center align-items-center mt-3">
-                <button id="decreaseButton" class="btn btn-outline-secondary me-2">-</button>
+            <!-- Nombre d'appartements -->
+            <div class="apartment-selector">
                 <span id="numberOfApartments" class="apartment-number">1</span>
-                <span> Appartement(s)</span>
-                <button id="increaseButton" class="btn btn-outline-secondary ms-2">+</button>
             </div>
         </div>
     </div>
