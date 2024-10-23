@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
             background-color: #f5f5f5;
@@ -27,7 +27,7 @@
         }
 
         #appartementSlider {
-            width: 100%;
+            width: 80%;
             margin: 20px 0;
         }
 
@@ -41,6 +41,7 @@
         .pricing-options {
             display: flex;
             justify-content: space-around;
+            width: 100%;
         }
 
         .details-container {
@@ -63,11 +64,14 @@
     </style>
 </head>
 <body>
+    <div>
+        <label for="appartementSlider">Nombre d'appartements : <span id="numberOfApartments">1</span></label>
+        <input type="range" id="appartementSlider" min="1" max="150" value="1">
+    </div>
+
     <div class="pricing-options">
         <div class="pricing-container" id="basicPlan">
             <h2>Tarification Basique</h2>
-            <label for="appartementSliderBasic">Nombre d'appartements : <span id="numberOfApartmentsBasic">1</span></label>
-            <input type="range" id="appartementSliderBasic" min="1" max="150" value="1">
             <div class="price-display">Tarif mensuel : <span id="monthlyPriceBasic">50</span> &euro;</div>
             <div class="details-container">
                 <h3>Détails du plan Basique :</h3>
@@ -80,8 +84,6 @@
         </div>
         <div class="pricing-container" id="standardPlan">
             <h2>Tarification Standard</h2>
-            <label for="appartementSliderStandard">Nombre d'appartements : <span id="numberOfApartmentsStandard">1</span></label>
-            <input type="range" id="appartementSliderStandard" min="1" max="150" value="1">
             <div class="price-display">Tarif mensuel : <span id="monthlyPriceStandard">70</span> &euro;</div>
             <div class="details-container">
                 <h3>Détails du plan Standard :</h3>
@@ -96,23 +98,15 @@
     </div>
 
     <script>
-        const sliderBasic = document.getElementById('appartementSliderBasic');
-        const numberOfApartmentsBasic = document.getElementById('numberOfApartmentsBasic');
+        const slider = document.getElementById('appartementSlider');
+        const numberOfApartments = document.getElementById('numberOfApartments');
         const monthlyPriceBasic = document.getElementById('monthlyPriceBasic');
-
-        const sliderStandard = document.getElementById('appartementSliderStandard');
-        const numberOfApartmentsStandard = document.getElementById('numberOfApartmentsStandard');
         const monthlyPriceStandard = document.getElementById('monthlyPriceStandard');
 
-        sliderBasic.addEventListener('input', function() {
-            const numApartments = parseInt(sliderBasic.value);
-            numberOfApartmentsBasic.textContent = numApartments;
+        slider.addEventListener('input', function() {
+            const numApartments = parseInt(slider.value);
+            numberOfApartments.textContent = numApartments;
             monthlyPriceBasic.textContent = calculatePriceBasic(numApartments);
-        });
-
-        sliderStandard.addEventListener('input', function() {
-            const numApartments = parseInt(sliderStandard.value);
-            numberOfApartmentsStandard.textContent = numApartments;
             monthlyPriceStandard.textContent = calculatePriceStandard(numApartments);
         });
 
