@@ -60,6 +60,8 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             height: 100%;
+            margin-left: 15px;
+            margin-right: 15px;
         }
         .pricing-container h2 {
             font-size: 2em;
@@ -97,7 +99,7 @@
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 30px 0;
+            margin: 30px;
             text-align: center;
             display: flex;
             align-items: center;
@@ -107,13 +109,18 @@
             margin-bottom: 20px;
         }
         .slider-container input[type="range"] {
-            width: 60%;
+            width: 50%;
             margin: 20px;
         }
         .apartment-selector {
             font-size: 1.5em;
             font-weight: bold;
             color: #007bff;
+            display: flex;
+            align-items: center;
+        }
+        .apartment-selector button {
+            margin: 0 10px;
         }
 
         /* Footer Styles */
@@ -152,13 +159,7 @@
         /* Responsive Margins for Pricing Blocks */
         @media (min-width: 768px) {
             .pricing-container {
-                margin-left: 15px;
-                margin-right: 15px;
-            }
-            .pricing-container:first-child {
                 margin-left: 30px;
-            }
-            .pricing-container:last-child {
                 margin-right: 30px;
             }
         }
@@ -207,9 +208,11 @@
             </div>
             <!-- Barre de Curseur -->
             <input type="range" id="appartementSlider" min="1" max="150" value="1">
-            <!-- Nombre d'appartements -->
+            <!-- Nombre d'appartements avec boutons d'incrémentation et décrémentation -->
             <div class="apartment-selector">
+                <button id="decreaseButton" class="btn btn-outline-secondary">-</button>
                 <span id="numberOfApartments" class="apartment-number">1</span>
+                <button id="increaseButton" class="btn btn-outline-secondary">+</button>
             </div>
         </div>
     </div>
