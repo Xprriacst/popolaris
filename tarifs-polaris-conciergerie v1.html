@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarification Automatisation Airbnb</title>
+    <!-- Lien vers Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Lien vers Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+    <!-- Lien vers la police Raleway -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* Navbar Styles */
+        .navbar-white {
+            background-color: #ffffff;
+            transition: box-shadow 0.3s ease;
+        }
+        .shadow {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-toggler {
+            border: none;
+            outline: none;
+        }
+        .navbar-toggler-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        #hero {
+            background-image: url('votre-image-de-fond.jpg'); /* Remplacez par le chemin de votre image */
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            color: black; /* Changement de la couleur du texte en noir */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding-top: 50px; /* Remonter le contenu */
+        }
+        #hero h1 {
+            font-size: 3em;
+            font-weight: bold;
+        }
+        #hero p {
+            font-size: 1.5em;
+        }
+
+        /* Pricing Styles */
+        .pricing-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+        .pricing-container h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .price-display {
+            font-size: 2em;
+            font-weight: bold;
+            color: #007bff;
+            margin: 20px 0;
+        }
+        .list-group-item {
+            border: none;
+            padding-left: 0;
+        }
+        .cta-button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+            text-decoration: none;
+        }
+
+        /* Slider Block Styles */
+        .slider-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 30px 0;
+            text-align: center;
+        }
+        .slider-container .icon {
+            font-size: 2em;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .slider-container input[type="range"] {
+            width: 80%;
+            margin: 20px 0;
+        }
+        .slider-container .apartment-number {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #ffffff;
+            padding: 40px 0;
+        }
+        .footer h5 {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+        .footer ul li a {
+            color: #6c757d;
+            text-decoration: none;
+        }
+        .footer ul li a:hover {
+            color: #007bff;
+        }
+        .footer .social-icons a {
+            font-size: 1.5em;
+            color: #6c757d;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+        .footer .social-icons a:hover {
+            color: #007bff;
+        }
+        .footer .copy-right {
+            margin-top: 30px;
+            color: #6c757d;
+        }
+
+        /* Responsive Margins for Pricing Blocks */
+        @media (min-width: 768px) {
+            .pricing-container {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            .pricing-container:first-child {
+                margin-left: 30px;
+            }
+            .pricing-container:last-child {
+                margin-right: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- En-tête -->
+    <header class="p-3 sticky-top navbar-white" id="mainNavbar">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">
+                    <img src="logo_polaris_v3.png" alt="Polaris Logo" style="width: 150px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#tarifs">Tarifs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#hero">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#fonctionnalites">Fonctionnalités</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section Hero -->
+    <section id="hero">
+        <div class="container text-center">
+            <h1>Automatisez Votre Gestion Airbnb</h1>
+            <p>Optimisez vos revenus et gagnez du temps avec notre solution complète.</p>
+            <a href="#tarifs" class="btn btn-primary btn-lg cta-button">Voir les Tarifs</a>
+        </div>
+    </section>
+
+    <!-- Slider Block -->
+    <div class="container">
+        <div class="slider-container">
+            <div class="icon">
+                <i class="fas fa-building"></i>
+            </div>
+            <input type="range" id="appartementSlider" min="1" max="150" value="1">
+            <div class="apartment-number">
+                <span id="numberOfApartments">1</span> Appartement(s)
+            </div>
+        </div>
+    </div>
+
+    <!-- Options de Tarification -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-4 d-flex">
+                <div class="pricing-container flex-fill">
+                    <h2>Tarification Basique</h2>
+                    <p class="price-display">Tarif mensuel : <span id="monthlyPriceBasic">50</span> &euro;</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Réponses automatisées basiques</li>
+                        <li class="list-group-item">Support limité (email uniquement)</li>
+                        <li class="list-group-item">Pas de personnalisation des messages</li>
+                    </ul>
+                    <a href="#" class="cta-button">Choisir ce plan</a>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 d-flex">
+                <div class="pricing-container flex-fill">
+                    <h2>Tarification Standard</h2>
+                    <p class="price-display">Tarif mensuel : <span id="monthlyPriceStandard">70</span> &euro;</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Réponses automatisées avancées</li>
+                        <li class="list-group-item">Support prioritaire (email et chat)</li>
+                        <li class="list-group-item">Personnalisation des messages</li>
+                        <li class="list-group-item">Rapports mensuels sur la performance des réponses</li>
+                    </ul>
+                    <a href="#" class="cta-button">Choisir ce plan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pied de Page -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Colonnes du pied de page -->
+                <div class="col-md-3">
+                    <h5>À propos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Notre mission</a></li>
+                        <li><a href="#">Notre équipe</a></li>
+                        <li><a href="#">Carrières</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Liens Utiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Politique de Confidentialité</a></li>
+                        <li><a href="#">Conditions Générales</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Centre d'aide</a></li>
+                        <li><a href="#">Nous Contacter</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Suivez-nous</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook me-3"></i></a>
+                        <a href="#"><i class="fab fa-twitter me-3"></i></a>
+                        <a href="#"><i class="fab fa-linkedin me-3"></i></a>
+                        <a href="#"><i class="fab fa-instagram me-3"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center copy-right">
+                <p>© 2024 Nom de l'Entreprise - Tous Droits Réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const slider = document.getElementById('appartementSlider');
+        const numberOfApartments = document.getElementById('numberOfApartments');
+        const monthlyPriceBasic = document.getElementById('monthlyPriceBasic');
+        const monthlyPriceStandard = document.getElementById('monthlyPriceStandard');
+
+        slider.addEventListener('input', function() {
+            const numApartments = parseInt(slider.value);
+            numberOfApartments.textContent = numApartments;
+
+            if (numApartments > 100) {
+                monthlyPriceBasic.textContent = 'Sur devis';
+                monthlyPriceStandard.textContent = 'Sur devis';
+            } else {
+                monthlyPriceBasic.textContent = calculatePriceBasic(numApartments);
+                monthlyPriceStandard.textContent = calculatePriceStandard(numApartments);
+            }
+        });
+
+        function calculatePriceBasic(numApartments) {
+            let pricePerApartment;
+
+            if (numApartments === 1) {
+                pricePerApartment = 50;
+            } else if (numApartments >= 2 && numApartments <= 3) {
+                pricePerApartment = 48;
+            } else if (numApartments >= 4 && numApartments <= 5) {
+                pricePerApartment = 45;
+            } else if (numApartments >= 6 && numApartments <= 10) {
+                pricePerApartment = 42;
+            } else if (numApartments >= 11 && numApartments <= 20) {
+                pricePerApartment = 40;
+            } else if (numApartments >= 21 && numApartments <= 50) {
+                pricePerApartment = 38;
+            } else if (numApartments >= 51 && numApartments <= 100) {
+                pricePerApartment = 35;
+            } else {
+                pricePerApartment = 30;
+            }
+
+            return numApartments * pricePerApartment;
+        }
+
+        function calculatePriceStandard(numApartments) {
+            let pricePerApartment;
+
+            if (numApartments === 1) {
+                pricePerApartment = 70;
+            } else if (numApartments >= 2 && numApartments <= 3) {
+                pricePerApartment = 68;
+            } else if (numApartments >= 4 && numApartments <= 5) {
+                pricePerApartment = 65;
+            } else if (numApartments >= 6 && numApartments <= 10) {
+                pricePerApartment = 62;
+            } else if (numApartments >= 11 && numApartments <= 20) {
+                pricePerApartment = 60;
+            } else if (numApartments >= 21 && numApartments <= 50) {
+                pricePerApartment = 58;
+            } else if (numApartments >= 51 && numApartments <= 100) {
+                pricePerApartment = 55;
+            } else {
+                pricePerApartment = 50;
+            }
+
+            return numApartments * pricePerApartment;
+        }
+
+        // Ajouter ombre au navbar au scroll
+        window.addEventListener('scroll', function() {
+            var navbar = document.getElementById('mainNavbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow');
+            } else {
+                navbar.classList.remove('shadow');
+            }
+        });
+    </script>
+</body>
+</html>
