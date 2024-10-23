@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarification Automatisation Airbnb</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .pricing-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            text-align: center;
+        }
+
+        #appartementSlider {
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .price-display {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #007bff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="pricing-container">
+        <h2>Tarification Automatisation Airbnb</h2>
+        <label for="appartementSlider">Nombre d'appartements : <span id="numberOfApartments">1</span></label>
+        <input type="range" id="appartementSlider" min="1" max="150" value="1">
+        <div class="price-display">Tarif mensuel : <span id="monthlyPrice">70</span> &euro;</div>
+    </div>
+
+    <script>
+        const slider = document.getElementById('appartementSlider');
+        const numberOfApartments = document.getElementById('numberOfApartments');
+        const monthlyPrice = document.getElementById('monthlyPrice');
+
+        slider.addEventListener('input', function() {
+            const numApartments = parseInt(slider.value);
+            numberOfApartments.textContent = numApartments;
+            monthlyPrice.textContent = calculatePrice(numApartments);
+        });
+
+        function calculatePrice(numApartments) {
+            let pricePerApartment;
+
+            if (numApartments === 1) {
+                pricePerApartment = 70;
+            } else if (numApartments >= 2 && numApartments <= 3) {
+                pricePerApartment = 65;
+            } else if (numApartments >= 4 && numApartments <= 5) {
+                pricePerApartment = 60;
+            } else if (numApartments >= 6 && numApartments <= 10) {
+                pricePerApartment = 55;
+            } else if (numApartments >= 11 && numApartments <= 20) {
+                pricePerApartment = 50;
+            } else if (numApartments >= 21 && numApartments <= 50) {
+                pricePerApartment = 45;
+            } else if (numApartments >= 51 && numApartments <= 100) {
+                pricePerApartment = 40;
+            } else if (numApartments > 100) {
+                pricePerApartment = 30;
+            }
+
+            return numApartments * pricePerApartment;
+        }
+    </script>
+</body>
+</html>
