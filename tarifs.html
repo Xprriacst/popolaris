@@ -23,6 +23,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 400px;
             text-align: center;
+            margin: 10px;
         }
 
         #appartementSlider {
@@ -36,28 +37,75 @@
             color: #007bff;
             margin-top: 20px;
         }
+
+        .pricing-options {
+            display: flex;
+            justify-content: space-around;
+        }
     </style>
 </head>
 <body>
-    <div class="pricing-container">
-        <h2>Tarification Automatisation Airbnb</h2>
-        <label for="appartementSlider">Nombre d'appartements : <span id="numberOfApartments">1</span></label>
-        <input type="range" id="appartementSlider" min="1" max="150" value="1">
-        <div class="price-display">Tarif mensuel : <span id="monthlyPrice">70</span> &euro;</div>
+    <div class="pricing-options">
+        <div class="pricing-container" id="basicPlan">
+            <h2>Tarification Basique</h2>
+            <label for="appartementSliderBasic">Nombre d'appartements : <span id="numberOfApartmentsBasic">1</span></label>
+            <input type="range" id="appartementSliderBasic" min="1" max="150" value="1">
+            <div class="price-display">Tarif mensuel : <span id="monthlyPriceBasic">50</span> &euro;</div>
+        </div>
+        <div class="pricing-container" id="standardPlan">
+            <h2>Tarification Standard</h2>
+            <label for="appartementSliderStandard">Nombre d'appartements : <span id="numberOfApartmentsStandard">1</span></label>
+            <input type="range" id="appartementSliderStandard" min="1" max="150" value="1">
+            <div class="price-display">Tarif mensuel : <span id="monthlyPriceStandard">70</span> &euro;</div>
+        </div>
     </div>
 
     <script>
-        const slider = document.getElementById('appartementSlider');
-        const numberOfApartments = document.getElementById('numberOfApartments');
-        const monthlyPrice = document.getElementById('monthlyPrice');
+        const sliderBasic = document.getElementById('appartementSliderBasic');
+        const numberOfApartmentsBasic = document.getElementById('numberOfApartmentsBasic');
+        const monthlyPriceBasic = document.getElementById('monthlyPriceBasic');
 
-        slider.addEventListener('input', function() {
-            const numApartments = parseInt(slider.value);
-            numberOfApartments.textContent = numApartments;
-            monthlyPrice.textContent = calculatePrice(numApartments);
+        const sliderStandard = document.getElementById('appartementSliderStandard');
+        const numberOfApartmentsStandard = document.getElementById('numberOfApartmentsStandard');
+        const monthlyPriceStandard = document.getElementById('monthlyPriceStandard');
+
+        sliderBasic.addEventListener('input', function() {
+            const numApartments = parseInt(sliderBasic.value);
+            numberOfApartmentsBasic.textContent = numApartments;
+            monthlyPriceBasic.textContent = calculatePriceBasic(numApartments);
         });
 
-        function calculatePrice(numApartments) {
+        sliderStandard.addEventListener('input', function() {
+            const numApartments = parseInt(sliderStandard.value);
+            numberOfApartmentsStandard.textContent = numApartments;
+            monthlyPriceStandard.textContent = calculatePriceStandard(numApartments);
+        });
+
+        function calculatePriceBasic(numApartments) {
+            let pricePerApartment;
+
+            if (numApartments === 1) {
+                pricePerApartment = 50;
+            } else if (numApartments >= 2 && numApartments <= 3) {
+                pricePerApartment = 48;
+            } else if (numApartments >= 4 && numApartments <= 5) {
+                pricePerApartment = 45;
+            } else if (numApartments >= 6 && numApartments <= 10) {
+                pricePerApartment = 42;
+            } else if (numApartments >= 11 && numApartments <= 20) {
+                pricePerApartment = 40;
+            } else if (numApartments >= 21 && numApartments <= 50) {
+                pricePerApartment = 38;
+            } else if (numApartments >= 51 && numApartments <= 100) {
+                pricePerApartment = 35;
+            } else if (numApartments > 100) {
+                pricePerApartment = 30;
+            }
+
+            return numApartments * pricePerApartment;
+        }
+
+        function calculatePriceStandard(numApartments) {
             let pricePerApartment;
 
             if (numApartments === 1) {
