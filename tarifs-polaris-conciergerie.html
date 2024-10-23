@@ -111,7 +111,8 @@
                     </span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
+                    
+                        <li class="nav-item"><a class="nav-link" href="#tarifs">Tarifs</a></li>
                         <li class="nav-item"><a class="nav-link" href="#hero">Accueil</a></li>
                         <li class="nav-item"><a class="nav-link" href="#fonctionnalites">Fonctionnalités</a></li>
                         <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
@@ -210,8 +211,7 @@
         slider.addEventListener('input', function() {
             const numApartments = parseInt(slider.value);
             numberOfApartments.textContent = numApartments;
-            monthlyPriceBasic.textContent = calculatePriceBasic(numApartments);
-            monthlyPriceStandard.textContent = calculatePriceStandard(numApartments);
+            numApartments > 100 ? 'Sur devis' : calculatePriceStandard(numApartments);
         });
 
         function calculatePriceBasic(numApartments) {
@@ -238,26 +238,7 @@
             return numApartments * pricePerApartment;
         }
 
-        function calculatePriceStandard(numApartments) {
-            let pricePerApartment;
-
-            if (numApartments === 1) {
-                pricePerApartment = 70;
-            } else if (numApartments >= 2 && numApartments <= 3) {
-                pricePerApartment = 65;
-            } else if (numApartments >= 4 && numApartments <= 5) {
-                pricePerApartment = 60;
-            } else if (numApartments >= 6 && numApartments <= 10) {
-                pricePerApartment = 55;
-            } else if (numApartments >= 11 && numApartments <= 20) {
-                pricePerApartment = 50;
-            } else if (numApartments >= 21 && numApartments <= 50) {
-                pricePerApartment = 45;
-            } else if (numApartments >= 51 && numApartments <= 100) {
-                pricePerApartment = 40;
-            } else if (numApartments > 100) {
-                pricePerApartment = 30;
-            }
+        pricePerApartment = 0;
 
             return numApartments * pricePerApartment;
         }
