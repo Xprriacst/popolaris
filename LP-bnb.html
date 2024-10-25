@@ -1,265 +1,363 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automatisation Airbnb - Landing Page</title>
+    <title>Automatisation pour Hôtes Airbnb</title>
+    <!-- Lien vers Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Lien vers Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
+        /* Styles personnalisés */
         body {
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, #007bff, #00d4ff);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, transparent, rgba(0, 0, 0, 0.5));
+            animation: rotateBg 10s linear infinite;
+        }
+        @keyframes rotateBg {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
         .cta-button {
-            background-color: #007bff;
+            background-color: #ff5722;
             color: white;
             padding: 12px 25px;
             border: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            margin-bottom: 20px;
+            border-radius: 50px;
+            transition: background-color 0.3s ease;
         }
         .cta-button:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
+            background-color: #e64a19;
         }
-        .info-section, .integration-section, .how-it-works-section, .benefits-section, .testimonial, .faq-section {
-            padding: 60px 0;
+        /* Menu Desktop (Navbar) */
+        .navbar-white {
+            background-color: rgba(255, 255, 255, 0.9);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
-        .info-section h3 {
-            font-size: 2.5rem;
-            color: #007bff;
+        .navbar-white.scrolled {
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        /* Menu Mobile */
+        .navbar-toggler {
+            border: none;
+            outline: none;
+        }
+        .navbar-toggler-icon {
+            font-size: 1.5rem;
+        }
+        /* Section Présentation */
+        .presentation-section {
+            padding: 50px 0;
+        }
+        /* Section Avantages */
+        .advantages-section {
+            padding: 50px 0;
+            background-color: #f8f9fa;
+        }
+        /* Section Offre */
+        .offer-section {
+            padding: 50px 0;
+            background-color: #007bff;
+            color: white;
+        }
+        /* Footer */
+        .footer {
+            background-color: #343a40;
+            padding: 40px 0;
+        }
+        .footer h5 {
+            font-size: 1.25rem;
+        }
+        .footer ul {
+            padding-left: 0;
+        }
+        .footer ul li {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+        .footer a {
+            text-decoration: none;
+            color: #adb5bd;
+            transition: color 0.3s ease;
+        }
+        .footer a:hover {
+            color: #ffffff;
+        }
+        .footer ul li i {
+            font-size: 1.5rem;
+        }
+        .footer .text-center p {
+            margin-top: 20px;
+            font-size: 0.875rem;
+            color: #adb5bd;
+        }
+        /* Responsivité */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                text-align: center;
+            }
+            .hero {
+                height: auto;
+                padding: 100px 0;
+            }
+        }
+        /* Animations CSS */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="p-3 sticky-top navbar-white" id="mainNavbar">
-        <div class="container-fluid">
+    <!-- En-tête avec le menu responsive -->
+    <header class="p-3 fixed-top navbar-white" id="mainNavbar">
+        <div class="container">
             <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="#">
-                    <img src="logo_polaris.png" alt="Logo" style="width: 150px;">
+                    <img src="polaris3-logo.png" alt="Logo" style="width: 150px;">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Basculer la navigation">
                     <span class="navbar-toggler-icon">
                         <i class="fas fa-bars"></i>
                     </span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#hero">Accueil</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#solutions">Solutions</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Fonctionnalités</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
+    <!-- Script pour changer le fond de la navbar au défilement -->
+    <script>
+        window.addEventListener('scroll', function() {
+            var navbar = document.getElementById('mainNavbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+    <!-- Section Héros -->
+    <section class="hero">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row align-items-center text-center text-md-start">
                 <div class="col-md-6">
-                    <h1>Nous aidons les hôtes Airbnb à automatiser jusqu'à 80-90% de leur communication client.</h1>
-                    <p>Bonjour, je m'appelle Alexandre, ingénieur informatique et hôte Airbnb. J'ai développé une IA pour automatiser la majorité de la communication avec les invités et gagner du temps.</p>
-                    <button class="cta-button">Postuler maintenant</button>
+                    <h1 class="mb-4" style="animation: fadeInDown 1s;">
+                        Nous aidons les hôtes Airbnb à automatiser jusqu'à 80-90% de leur communication client.
+                    </h1>
+                    <p class="mb-4" style="animation: fadeInUp 1s;">
+                        En novembre 2024, nous prenons en charge gratuitement 3 clients.
+                    </p>
+                    <a href="#" class="cta-button">Postuler maintenant</a>
                 </div>
-                <div class="col-md-6 d-none d-md-block">
-                    <img src="airbnb_automation.png" alt="Illustration" class="img-fluid">
+                <div class="col-md-6 mt-5 mt-md-0">
+                    <img alt="Illustration" class="img-fluid" src="chatbotos2.png" style="animation: fadeInRight 1s;"/>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Défis des Hôtes Airbnb -->
+    <!-- Section Présentation Personnelle -->
+    <section class="presentation-section">
+        <div class="container">
+            <h2 class="mb-5 text-center">Présentation Personnelle</h2>
+            <p>
+                Bonjour, je m'appelle Alexandre et je suis ingénieur en informatique. En parallèle de mon travail, je gère à distance un studio dans la Loire. Quand j'ai commencé cette activité, je me suis vite rendu compte que je passais énormément de temps sur mon téléphone à répondre à des questions qui revenaient sans cesse.
+            </p>
+            <p>
+                C'est là que j'ai eu l'idée de mettre en place une IA qui répond automatiquement à 80-90% de mes messages clients. Depuis, j'ai pu récupérer un temps précieux et me concentrer sur ce qui compte vraiment.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section Défis -->
     <section class="info-section text-center">
         <div class="container">
-            <h2>Les défis des hôtes Airbnb</h2>
-            <div class="row mt-5">
-                <div class="col-md-4">
+            <h2 class="mb-5">Les Défis que Rencontrent les Hôtes</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <i class="fas fa-mobile-alt fa-3x mb-3 text-primary"></i>
                     <h3>Trop de temps sur le téléphone</h3>
-                    <p>Gérer les communications sans valeur ajoutée peut être très chronophage.</p>
+                    <p>Trop de temps passé à gérer des communications sans valeur ajoutée.</p>
                 </div>
-                <div class="col-md-4">
-                    <h3>Jamais 100% relax</h3>
-                    <p>Impossible d'avoir un moment de détente, car il faut toujours penser aux messages Airbnb.</p>
+                <div class="col-md-4 mb-4">
+                    <i class="fas fa-heartbeat fa-3x mb-3 text-danger"></i>
+                    <h3>Pas de moment 100% relaxant</h3>
+                    <p>Impossible de se détendre complètement, toujours penser à l'Airbnb.</p>
                 </div>
-                <div class="col-md-4">
-                    <h3>Disponibilité permanente</h3>
-                    <p>Il est nécessaire d'être prêt à répondre à n'importe quelle heure.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Solutions Proposées -->
-    <section class="integration-section text-center" id="solutions">
-        <div class="container">
-            <h2>Ce que notre solution te permet de faire</h2>
-            <p>Imagine que l'IA gère les réponses courantes pour toi. Voici ce que nous proposons :</p>
-            <div class="row mt-5">
-                <div class="col-md-4">
-                    <h5>Automatisation des réponses courantes</h5>
-                    <p>L'IA peut répondre instantanément aux questions fréquentes : clés, horaires, équipements...</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Personnalisation des messages</h5>
-                    <p>L'IA adopte ton style et ton ton pour que chaque interaction soit authentique.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Disponibilité 24/7</h5>
-                    <p>Même quand tu dors, tes hôtes reçoivent une réponse rapide et professionnelle.</p>
+                <div class="col-md-4 mb-4">
+                    <i class="fas fa-clock fa-3x mb-3 text-info"></i>
+                    <h3>Disponibilité constante</h3>
+                    <p>Être prêt à répondre rapidement à toute question, à n'importe quelle heure.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Fonctionnalités -->
-    <section class="benefits-section text-center">
+    <!-- Section Imagine Cela -->
+    <section class="info-section">
         <div class="container">
-            <h2>Pourquoi choisir notre IA ?</h2>
-            <div class="row mt-5">
-                <div class="col-md-4">
-                    <h5>Style et tonalité</h5>
-                    <p>L'IA adopte ton style pour des réponses qui te ressemblent.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Transparence totale</h5>
-                    <p>Les messages sont envoyés directement de ton compte Airbnb.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Sécurisation des réponses</h5>
-                    <p>Notre IA suit un protocole strict pour assurer des réponses adéquates et sûres.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Personnalisation spécifique</h5>
-                    <p>L'IA est entraînée avec les particularités de ton logement.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Simplicité de mise en place</h5>
-                    <p>Fournis les infos nécessaires, nous nous occupons du reste.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Compréhension adaptative</h5>
-                    <p>L'IA gère les fautes de frappe et d'orthographe pour une communication fluide.</p>
-                </div>
-            </div>
+            <h2 class="mb-5 text-center">Imagine Cela</h2>
+            <p>
+                Tu reçois une notification Airbnb, alors que tu es au travail, concentré sur une tâche qui n'a rien à voir avec ton Airbnb.
+            </p>
+            <p>
+                Tu regardes ton téléphone et tu te rends compte que... tu n'as rien à faire, parce que l'IA a déjà répondu à ton client.
+            </p>
+            <p>
+                Plus de distractions, plus de stress. Tu as la liberté de te concentrer sur ta vie, ton travail, ou sur l'expérience que tu proposes à tes hôtes.
+            </p>
         </div>
     </section>
 
-    <!-- Section Comment ça marche -->
-    <section class="how-it-works-section text-center">
+    <!-- Section Ce que Nous Proposons -->
+    <section class="info-section">
         <div class="container">
-            <h2>Comment ça fonctionne ?</h2>
-            <div class="row mt-5">
-                <div class="col-md-4">
-                    <h5>Étape 1</h5>
-                    <p>Contacte-nous et explique-nous tes besoins.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Étape 2</h5>
-                    <p>Nous paramétrons l'IA pour ton compte en fonction de tes attentes spécifiques.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Étape 3</h5>
-                    <p>L'IA commence à travailler pour toi, en répondant à tes invités 24/7.</p>
-                </div>
-            </div>
+            <h2 class="mb-5 text-center">Ce que Nous Proposons</h2>
+            <ul>
+                <li><strong>Automatisation des réponses courantes :</strong> L'IA peut répondre instantanément aux questions fréquentes, comme l'emplacement des clés, les horaires d'arrivée et de départ, ou encore les équipements disponibles.</li>
+                <li><strong>Personnalisation des messages :</strong> L'IA adopte ton ton et ton style, pour que chaque interaction soit personnalisée et authentique.</li>
+                <li><strong>Disponibilité 24/7 :</strong> Même quand tu dors ou que tu es déconnecté, tes hôtes reçoivent une réponse rapide et professionnelle.</li>
+            </ul>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq-section text-center" id="faq">
+    <!-- Section Argumentaires -->
+    <section class="info-section">
         <div class="container">
-            <h2>FAQ</h2>
-            <div class="accordion mt-5" id="faqAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            L'IA peut-elle vraiment adopter mon style de communication ?
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Oui, notre IA est spécialement entraînée pour copier ton style et ta tonalité afin que chaque réponse ressemble à une réponse personnalisée venant de toi.
-                        </div>
-                    </div>
+            <h2 class="mb-5 text-center">Pourquoi Choisir Notre Solution</h2>
+            <ul>
+                <li><strong>Style et tonalité :</strong> L'IA copie ton style et ta tonalité pour s'assurer que tes clients soient entièrement satisfaits.</li>
+                <li><strong>Transparence totale :</strong> Pour tes clients, c'est entièrement transparent car les messages sont envoyés à partir de tes comptes Airbnb et Booking.</li>
+                <li><strong>Sécurisation des réponses :</strong> L'IA ne dit pas n'importe quoi, car nous proposons un protocole complet de sécurisation des réponses de l'IA.</li>
+                <li><strong>Personnalisation spécifique :</strong> L'IA répond de manière personnalisée car nous l'entraînons avec les informations spécifiques à ton logement.</li>
+                <li><strong>Simplicité de mise en place :</strong> Tu n'as rien à faire, si ce n'est nous fournir les informations que tu veux que nous intégrions, et nous nous occupons de toute la configuration et l'entraînement de l'IA.</li>
+                <li><strong>Compréhension adaptative :</strong> L'IA comprend les réponses des clients quelle que soit la formulation (fautes d'orthographe, fautes de frappe, etc.).</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section Les Avantages -->
+    <section class="advantages-section text-center">
+        <div class="container">
+            <h2 class="mb-5">Les Avantages pour Toi</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <i class="fas fa-clock fa-3x mb-3 text-success"></i>
+                    <h3>Gagne du temps</h3>
+                    <p>Fini les interruptions constantes.</p>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Est-ce que mes invités sauront que c'est une IA qui répond ?
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Non, pour tes invités, c'est entièrement transparent. Les messages sont envoyés directement depuis ton compte Airbnb, donnant l'impression que tu les as envoyés toi-même.
-                        </div>
-                    </div>
+                <div class="col-md-4 mb-4">
+                    <i class="fas fa-star fa-3x mb-3 text-warning"></i>
+                    <h3>Améliore tes avis</h3>
+                    <p>Une réponse rapide = des hôtes satisfaits.</p>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Comment l'IA assure-t-elle des réponses sûres et appropriées ?
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Nous avons mis en place un protocole de sécurisation des réponses, garantissant que l'IA ne donne que des informations appropriées et sûres, conformément aux attentes des hôtes.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFour">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            Comment l'IA est-elle personnalisée pour mon logement spécifique ?
-                        </button>
-                    </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Nous entraînons l'IA en utilisant des informations spécifiques sur ton logement, y compris les équipements, les règles et les préférences, pour assurer des réponses parfaitement adaptées.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFive">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                            Est-ce difficile à configurer ?
-                        </button>
-                    </h2>
-                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Pas du tout. Tu n'as rien à faire, sauf nous fournir les informations nécessaires, et nous nous occupons de toute la configuration et l'entraînement de l'IA.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingSix">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            Comment l'IA gère-t-elle les fautes de frappe et d'orthographe ?
-                        </button>
-                    </h2>
-                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            L'IA est conçue pour comprendre les variations dans les réponses, y compris les fautes de frappe et d'orthographe, afin de toujours fournir une communication fluide et précise.
-                        </div>
-                    </div>
+                <div class="col-md-4 mb-4">
+                    <i class="fas fa-smile fa-3x mb-3 text-primary"></i>
+                    <h3>Moins de stress</h3>
+                    <p>Profite de ta vie sans te soucier de chaque notification.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Section Offre de Lancement -->
-    <section class="info-section text-center" id="launch-offer">
+    <section class="offer-section text-center">
         <div class="container">
-            <p>Offre de lancement : en novembre 2024, nous prenons en charge gratuitement 3 clients !</p>
-            <button class="cta-button">Postuler maintenant</button>
+            <h2 class="mb-4">Offre de Lancement</h2>
+            <p>
+                En novembre 2024, nous prenons en charge gratuitement 3 clients. Profite de cette opportunité pour tester l'automatisation sans frais et découvrir par toi-même la différence que cela peut faire.
+            </p>
+            <a href="#" class="cta-button">Postuler maintenant</a>
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="footer text-light py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Colonne 1 -->
+                <div class="col-md-3 mb-4">
+                    <h5>À propos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Notre mission</a></li>
+                        <li><a href="#">Notre équipe</a></li>
+                        <li><a href="#">Carrières</a></li>
+                    </ul>
+                </div>
+                <!-- Colonne 2 -->
+                <div class="col-md-3 mb-4">
+                    <h5>Liens Utiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Politique de Confidentialité</a></li>
+                        <li><a href="#">Conditions Générales</a></li>
+                    </ul>
+                </div>
+                <!-- Colonne 3 -->
+                <div class="col-md-3 mb-4">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Centre d'aide</a></li>
+                        <li><a href="#">Nous Contacter</a></li>
+                    </ul>
+                </div>
+                <!-- Colonne 4 -->
+                <div class="col-md-3 mb-4">
+                    <h5>Suivez-nous</h5>
+                    <ul class="list-unstyled d-flex">
+                        <li><a href="#" class="me-3"><i class="fab fa-facebook fa-2x"></i></a></li>
+                        <li><a href="#" class="me-3"><i class="fab fa-twitter fa-2x"></i></a></li>
+                        <li><a href="#" class="me-3"><i class="fab fa-linkedin fa-2x"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>© 2024 Nom de l'Entreprise - Tous Droits Réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
