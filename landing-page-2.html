@@ -28,17 +28,51 @@
             transform: scale(1.05);
         }
 
-        /* Styles de la section Hero */
+        /* Section Hero */
         .hero {
             padding: 60px 0;
-            background-color: white;
+            background-color: #ffffff;
+            background-image: url('background-pattern.png');
+            background-size: cover;
+            background-position: center;
         }
         .hero h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: bold;
             color: #007bff;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #6c757d;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .cta-container {
             text-align: center;
             margin-top: 20px;
+        }
+        blockquote {
+            font-style: italic;
+            color: #6c757d;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .video-container {
+            max-width: 80%; /* Réduction de 20% */
+            margin: 0 auto;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
         }
 
         /* Menu fixe avec ombre */
@@ -53,37 +87,12 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .presentation-section {
-            padding: 60px 0;
-        }
-
-        .benefits-section {
-            padding: 60px 0;
-            background-color: #f8f9fa;
-        }
-
-        .footer {
-            background-color: #343a40;
-            padding: 40px 0;
-            color: white;
-        }
-
-        .footer a {
-            text-decoration: none;
-            color: #b0b0b0;
-        }
-
-        .footer a:hover {
-            color: white;
-        }
-
         @media (max-width: 767px) {
-            .hero {
-                padding-top: 20px;
-            }
             .hero h1 {
-                text-align: center;
-                margin: 20px;
+                font-size: 1.8rem;
+            }
+            .video-container {
+                max-width: 100%;
             }
         }
     </style>
@@ -116,62 +125,32 @@
     <section class="hero" id="hero">
         <div class="container text-center">
             <!-- Vidéo YouTube -->
-            <div class="embed-responsive embed-responsive-16by9 mb-4" style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%;">
+            <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/hFxVrFHR-hM" 
-                        style="position:absolute; top:0; left:0; width:100%; height:100%; border-radius:10px;" 
                         frameborder="0" allowfullscreen>
                 </iframe>
             </div>
             <!-- Titre -->
             <h1>Comment j'automatise 80-90% de mes conversations clients sur Airbnb/Booking</h1>
-        </div>
-    </section>
-
-    <!-- Section Présentation -->
-    <section class="presentation-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <img src="alexandre2.jpg" alt="Alexandre" style="border-radius: 10px; width: 100%;">
-                </div>
-                <div class="col-md-6">
-                    <p>Bonjour, </p>
-                    <p>Je m'appelle Alexandre, et je suis le fondateur de Polaris BnB</p>
-                    <p>Je suis ingénieur en informatique, spécialisé dans l'automatisation et l'IA.</p>
-                    <p>En parallèle de mon activité, je gère 100% à distance un logement en Airbnb/Booking.</p>
-                    <p>Quand j'ai démarré, je me suis vite rendu compte que je passais énormément de temps sur mon téléphone à répondre à des questions récurrentes.</p>
-                    <p>J'ai alors eu l'idée de mettre en place une IA qui répond automatiquement à 80-90% de mes messages clients. Depuis, j'ai pu récupérer un temps précieux et me concentrer sur ce qui compte vraiment.</p>
-                </div>
+            <!-- Sous-titre -->
+            <p class="hero-subtitle">
+                Découvrez une solution simple, efficace et accessible pour libérer votre temps tout en garantissant la satisfaction client.
+            </p>
+            <!-- Bouton CTA -->
+            <div class="cta-container">
+                <button class="cta-button">Postuler maintenant</button>
             </div>
-        </div>
-    </section>
-
-    <!-- Section Avantages -->
-    <section class="benefits-section text-center">
-        <div class="container">
-            <h2>Si tu es là aujourd'hui... </h2>
-            <p>...C'est que tu rencontres les problèmes suivants : </p>
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="probleme1.png" alt="Problème 1" class="img-fluid mb-3">
-                    <p>Tu passes trop de temps sur ton téléphone pour gérer des communications sans valeur ajoutée.</p>
-                </div>
-                <div class="col-md-4">
-                    <img src="probleme2.png" alt="Problème 2" class="img-fluid mb-3">
-                    <p>Aucun moment n'est 100% relaxant, car tu dois toujours garder en tête ton Airbnb.</p>
-                </div>
-                <div class="col-md-4">
-                    <img src="probleme3.png" alt="Problème 3" class="img-fluid mb-3">
-                    <p>Tu dois être prêt à répondre rapidement à toute question, à n'importe quelle heure.</p>
-                </div>
-            </div>
+            <!-- Témoignage -->
+            <blockquote>
+                "Cette solution a transformé ma gestion Airbnb. Je gagne du temps et mes clients sont ravis." – Jean D., Hôte Airbnb
+            </blockquote>
         </div>
     </section>
 
     <!-- Section Offre de lancement -->
     <section class="info-section text-center" id="launch-offer">
         <div class="container">
-            <p><strong>Offre de lancement :</strong> En novembre 2024, nous prenons en charge <strong>gratuitement</strong> 3 clients. Profite de cette opportunité pour tester l'automatisation sans frais et découvrir par toi-même la différence que cela peut faire.</p>
+            <p><strong>Offre de lancement :</strong> En décembre 2024, nous prenons en charge <strong>gratuitement</strong> 3 clients. Profite de cette opportunité pour tester l'automatisation sans frais et découvrir par toi-même la différence que cela peut faire.</p>
             <button class="cta-button">Postuler maintenant</button>
             <p><a href="#" class="hero-link">Je refuse de saisir cette opportunité unique</a></p>
         </div>
